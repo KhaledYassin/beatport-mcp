@@ -1,204 +1,156 @@
-import requests
+"""Beatport OAuth: token storage, refresh, and a one-time browser (PKCE) bootstrap.
+
+Browser login is the primary, user-facing auth path. End users do not hand-copy
+tokens. `TokenStore` holds credentials and persists refreshed tokens to a file so
+refresh-token rotation survives restarts.
+"""
+
+from __future__ import annotations
+
+import base64
+import hashlib
+import http.server
 import json
 import os
-from datetime import datetime, timedelta
+import secrets
+import threading
+import urllib.parse
+import webbrowser
+from pathlib import Path
 
-def get_beatport_token(username, password, save_to_file=True):
-    """
-    Get a Beatport API access token using username and password.
-    
-    Args:
-        username (str): Your Beatport username (email)
-        password (str): Your Beatport password
-        save_to_file (bool): Whether to save the token to a file
-        
-    Returns:
-        dict: Token information including access_token
-    """
-    url = "https://api.beatport.com/v4/auth/o/token/"
-    
-    # Using the User Password Grant Flow
-    payload = {
-        'username': username,
-        'password': password,
-        'grant_type': 'password'
-    }
-    
-    try:
-        response = requests.post(url, data=payload)
-        response.raise_for_status()
-        
-        # Parse response
-        token_data = response.json()
-        
-        # Calculate and add expiration time
-        expires_in = token_data.get('expires_in', 3600)
-        expires_at = datetime.now() + timedelta(seconds=expires_in)
-        token_data['expires_at'] = expires_at.isoformat()
-        
-        # Save token to file if requested
-        if save_to_file:
-            with open('.beatport_token.json', 'w') as f:
-                json.dump(token_data, f)
-            print("Token saved to .beatport_token.json")
-        
-        return token_data
-        
-    except Exception as e:
-        print(f"Error obtaining access token: {e}")
-        if 'response' in locals() and hasattr(response, 'text'):
-            print(f"Response: {response.text}")
-        return None
+import httpx
 
-def refresh_token(refresh_token_str):
-    """
-    Refresh an existing token.
-    
-    Args:
-        refresh_token_str (str): The refresh token
-        
-    Returns:
-        dict: New token information
-    """
-    url = "https://api.beatport.com/v4/auth/o/token/"
-    
-    payload = {
-        'refresh_token': refresh_token_str,
-        'grant_type': 'refresh_token'
-    }
-    
-    try:
-        response = requests.post(url, data=payload)
-        response.raise_for_status()
-        
-        # Parse response
-        token_data = response.json()
-        
-        # Calculate and add expiration time
-        expires_in = token_data.get('expires_in', 3600)
-        expires_at = datetime.now() + timedelta(seconds=expires_in)
-        token_data['expires_at'] = expires_at.isoformat()
-        
-        # Save the updated token
-        with open('.beatport_token.json', 'w') as f:
-            json.dump(token_data, f)
-        
-        return token_data
-        
-    except Exception as e:
-        print(f"Error refreshing token: {e}")
-        if 'response' in locals() and hasattr(response, 'text'):
-            print(f"Response: {response.text}")
-        return None
+API_BASE = "https://api.beatport.com/v4"
+TOKEN_URL = f"{API_BASE}/auth/o/token/"
+AUTHORIZE_URL = f"{API_BASE}/auth/o/authorize/"
+DEFAULT_TOKEN_PATH = Path.home() / ".beatport-mcp" / "token.json"
+REDIRECT_URI = "http://localhost:8765/callback"
 
-def get_current_token():
-    """
-    Get the current token from file, refreshing if needed.
-    
-    Returns:
-        str: Access token or None if not available
-    """
-    if not os.path.exists('.beatport_token.json'):
-        print("No token file found. Please authenticate first.")
-        return None
-    
-    try:
-        with open('.beatport_token.json', 'r') as f:
-            token_data = json.load(f)
-        
-        # Check if token is expired
-        expires_at = datetime.fromisoformat(token_data.get('expires_at', '2000-01-01'))
-        if expires_at <= datetime.now():
-            print("Token expired, refreshing...")
-            new_token_data = refresh_token(token_data.get('refresh_token'))
-            if new_token_data:
-                return new_token_data.get('access_token')
-            else:
-                return None
-        
-        return token_data.get('access_token')
-        
-    except Exception as e:
-        print(f"Error loading token: {e}")
-        return None
 
-def make_api_request(endpoint, method='GET', params=None, data=None):
-    """
-    Make an authenticated request to the Beatport API.
-    
-    Args:
-        endpoint (str): API endpoint (without base URL)
-        method (str): HTTP method ('GET', 'POST', etc.)
-        params (dict): URL parameters
-        data (dict): Request body for POST/PUT
-            
-    Returns:
-        dict: Response JSON data or None on error
-    """
-    token = get_current_token()
-    if not token:
-        print("No valid token available. Please authenticate first.")
-        return None
-    
-    url = f"https://api.beatport.com/v4/{endpoint.lstrip('/')}"
-    headers = {"Authorization": f"Bearer {token}"}
-    
-    try:
-        response = requests.request(
-            method,
-            url,
-            headers=headers,
-            params=params,
-            json=data if method in ['POST', 'PUT', 'PATCH'] else None
+def _token_path() -> Path:
+    raw = os.environ.get("BEATPORT_TOKEN_PATH")
+    return Path(raw).expanduser() if raw else DEFAULT_TOKEN_PATH
+
+
+class TokenStore:
+    """Holds OAuth credentials; persists refreshed tokens to a JSON file."""
+
+    def __init__(self, client_id: str, access_token: str | None = None,
+                 refresh_token: str | None = None, path: Path | None = None) -> None:
+        self.client_id = client_id
+        self.path = path or _token_path()
+        self.access_token = access_token
+        self.refresh_token = refresh_token
+        if self.access_token is None and self.path.exists():
+            saved = json.loads(self.path.read_text())
+            self.access_token = saved.get("access_token")
+            self.refresh_token = saved.get("refresh_token")
+
+    @classmethod
+    def from_env(cls) -> TokenStore:
+        client_id = os.environ.get("CLIENT_ID")
+        if not client_id:
+            raise RuntimeError("CLIENT_ID is not set. Run `uv run beatport-auth` first.")
+        return cls(
+            client_id=client_id,
+            access_token=os.environ.get("ACCESS_TOKEN"),
+            refresh_token=os.environ.get("REFRESH_TOKEN"),
         )
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        print(f"API request error: {e}")
-        if 'response' in locals() and hasattr(response, 'text'):
-            print(f"Response: {response.text}")
-        return None
 
-if __name__ == "__main__":
-    import getpass
-    
-    # Simple command line interface
-    print("Beatport API Token Manager")
-    print("--------------------------")
-    
-    # Check if we already have a valid token
-    token = get_current_token()
-    if token:
-        print(f"Using existing token: {token[:10]}... (truncated)")
-        print("Would you like to: ")
-        print("1. Test the token")
-        print("2. Get a new token")
-        choice = input("Enter choice (1 or 2): ")
-        
-        if choice == '1':
-            # Test the token with a simple request
-            result = make_api_request('auth/o/introspect/')
-            if result:
-                print("\nAPI Test Result:")
-                print(json.dumps(result, indent=2))
-        elif choice == '2':
-            # Get new token logic below
-            token = None
-    
-    # If no valid token, get a new one
-    if not token:
-        print("Using USERNAME and PASSWORD from .env")
-        username = os.getenv('BEATPORT_USERNAME')
-        password = os.getenv('BEATPORT_PASSWORD')
-        
-        token_data = get_beatport_token(username, password)
-        if token_data:
-            print(f"Successfully obtained token: {token_data['access_token'][:10]}... (truncated)")
-            
-            # Test the token
-            test = input("Would you like to test the token? (y/n): ")
-            if test.lower() == 'y':
-                result = make_api_request('auth/o/introspect/')
-                if result:
-                    print("\nAPI Test Result:")
-                    print(json.dumps(result, indent=2))
+    def update(self, access_token: str, refresh_token: str | None) -> None:
+        self.access_token = access_token
+        if refresh_token:
+            self.refresh_token = refresh_token
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.path.write_text(json.dumps(
+            {"access_token": self.access_token, "refresh_token": self.refresh_token}
+        ))
+        self.path.chmod(0o600)
+
+
+async def refresh_tokens(client_id: str, refresh_token: str) -> dict:
+    """Exchange a refresh token for a new access token."""
+    async with httpx.AsyncClient(timeout=30.0) as http:
+        resp = await http.post(TOKEN_URL, data={
+            "grant_type": "refresh_token",
+            "refresh_token": refresh_token,
+            "client_id": client_id,
+        })
+        resp.raise_for_status()
+        return resp.json()
+
+
+def pkce_pair() -> tuple[str, str]:
+    """Return (verifier, challenge) for the PKCE S256 flow."""
+    verifier = base64.urlsafe_b64encode(secrets.token_bytes(64)).rstrip(b"=").decode()
+    digest = hashlib.sha256(verifier.encode()).digest()
+    challenge = base64.urlsafe_b64encode(digest).rstrip(b"=").decode()
+    return verifier, challenge
+
+
+def build_authorize_url(client_id: str, redirect_uri: str, challenge: str) -> str:
+    params = urllib.parse.urlencode({
+        "client_id": client_id,
+        "response_type": "code",
+        "redirect_uri": redirect_uri,
+        "code_challenge": challenge,
+        "code_challenge_method": "S256",
+    })
+    return f"{AUTHORIZE_URL}?{params}"
+
+
+def main() -> None:
+    """One-time browser PKCE bootstrap. Opens the browser, captures the code via a
+    localhost callback, exchanges it, and persists the tokens.
+
+    NOTE: client_id and a working redirect_uri are verify-live items (spec Sec 11 #1, #7).
+    Until confirmed, paste CLIENT_ID/ACCESS_TOKEN/REFRESH_TOKEN from devtools into .env.
+    """
+    client_id = os.environ.get("CLIENT_ID")
+    if not client_id:
+        raise SystemExit("Set CLIENT_ID in the environment before running the bootstrap.")
+    verifier, challenge = pkce_pair()
+    code_box: dict[str, list[str]] = {}
+    got_code = threading.Event()
+
+    class Handler(http.server.BaseHTTPRequestHandler):
+        def do_GET(self) -> None:  # noqa: N802
+            parsed = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+            if "code" in parsed:
+                code_box.update(parsed)
+                got_code.set()
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"Authorized. You can close this tab.")
+
+        def log_message(self, format: str, *args: object) -> None:  # noqa: A002
+            return
+
+    server = http.server.HTTPServer(("localhost", 8765), Handler)
+
+    def serve() -> None:
+        while not got_code.is_set():
+            server.handle_request()
+        server.server_close()
+
+    threading.Thread(target=serve, daemon=True).start()
+    webbrowser.open(build_authorize_url(client_id, REDIRECT_URI, challenge))
+    print("Waiting for browser authorization...")
+    if not got_code.wait(timeout=120):
+        raise SystemExit("Timed out waiting for browser authorization.")
+    code = code_box["code"][0]
+    resp = httpx.post(TOKEN_URL, data={
+        "grant_type": "authorization_code",
+        "code": code,
+        "code_verifier": verifier,
+        "client_id": client_id,
+        "redirect_uri": REDIRECT_URI,
+    }, timeout=30.0)
+    resp.raise_for_status()
+    tokens = resp.json()
+    store = TokenStore(client_id=client_id)
+    store.update(tokens["access_token"], tokens.get("refresh_token"))
+    print(f"CLIENT_ID={client_id}")
+    print(f"ACCESS_TOKEN={tokens['access_token']}")
+    print(f"REFRESH_TOKEN={tokens.get('refresh_token')}")
+    print(f"Tokens persisted to {store.path}")
