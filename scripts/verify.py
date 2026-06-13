@@ -44,7 +44,7 @@ async def main() -> None:
     print("=== TRACK key object ===")
     print(json.dumps(track.get("key"), indent=2))
     print("=== preview-ish fields present ===")
-    print([k for k in track if "sample" in k.lower() or "preview" in k.lower() or "url" in k.lower()])
+    print([k for k in track if any(s in k.lower() for s in ("sample", "preview", "url"))])
     print("=== release sub-keys ===")
     print(sorted((track.get("release") or {}).keys()))
 
