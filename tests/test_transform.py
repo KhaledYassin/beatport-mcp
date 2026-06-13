@@ -77,5 +77,13 @@ def test_format_search_results_real_fixture():
 
     data = json.loads(Path("tests/fixtures/search_tracks.json").read_text())
     out = transform.format_search_results(data, "tracks")
-    assert out                                  # non-empty
-    assert all(line.startswith("#") for line in out.splitlines())
+    lines = out.splitlines()
+    assert lines[0].startswith("#")
+    assert lines[-1].startswith("Page ")        # pagination footer
+    assert all(line.startswith("#") for line in lines[:-1])
+
+
+def test_format_search_results_includes_pagination_footer():
+    data = {"tracks": [TRACK], "page": "1/1035", "count": 3103}
+    out = transform.format_search_results(data, "tracks")
+    assert out.splitlines()[-1] == "Page 1/1035 · 3103 results"

@@ -70,5 +70,14 @@ def format_search_results(data: dict, type: str) -> str:
     if not items:
         return "No results."
     if type == "tracks":
-        return "\n".join(format_track_summary(t) for t in items)
-    return "\n".join(f"#{item.get('id')} — {item.get('name', '?')}" for item in items)
+        body = "\n".join(format_track_summary(t) for t in items)
+    else:
+        body = "\n".join(f"#{item.get('id')} — {item.get('name', '?')}" for item in items)
+    footer = []
+    if data.get("page"):
+        footer.append(f"Page {data['page']}")
+    if data.get("count") is not None:
+        footer.append(f"{data['count']} results")
+    if footer:
+        body += "\n" + " · ".join(footer)
+    return body
