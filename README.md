@@ -13,9 +13,13 @@ faithful to the API for any consumer.
 |------|-------------|
 | `search(query, type="tracks", page=1, per_page=25)` | Search the catalog. `type` is one of `tracks`, `artists`, `releases`, `labels`, `charts`. Each result line is led by its ID. |
 | `get_track(track_id)` | Full track details: title, artists, BPM, key (with Camelot/Open-Key), genre, length, label, release, and preview URL. |
-
-> More catalog tools (artists, releases, labels, genres, charts, and filtered browsing by
-> BPM/key/genre) are on the roadmap.
+| `list_tracks(genre_id, artist_id, label_id, bpm, key, name, newest_first, page, per_page)` | Browse/filter tracks. `key` takes a name like `"A minor"`; `bpm` is exact (the API has no range — call several values to cover one). Sorts by release date. |
+| `list_genres()` | All Beatport genres with their IDs. |
+| `get_artist(artist_id)` | Artist profile plus their most recent tracks. |
+| `get_release(release_id)` | Release details plus its full tracklist. |
+| `get_label(label_id)` | Label profile plus its most recent releases. |
+| `get_genre(genre_id)` | Genre details plus its most recent tracks. |
+| `get_chart(chart_id)` | Chart details plus its tracks. |
 
 ## Set Up
 

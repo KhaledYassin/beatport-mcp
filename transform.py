@@ -109,10 +109,14 @@ def format_genre_list(data: dict) -> str:
     return "\n".join(f"#{g.get('id')} — {g.get('name', '?')}" for g in items)
 
 
+def _plural(n: int, word: str) -> str:
+    return f"{n} {word}" + ("" if n == 1 else "s")
+
+
 def format_release_summary(release: dict) -> str:
     bits = [f"#{release.get('id')} — {release.get('name', '?')} · {_artist_names(release)}"]
     if release.get("track_count"):
-        bits.append(f"{release['track_count']} tracks")
+        bits.append(_plural(release["track_count"], "track"))
     if release.get("publish_date"):
         bits.append(release["publish_date"])
     return " · ".join(bits)
@@ -155,7 +159,7 @@ def format_release(release: dict) -> str:
     if release.get("publish_date"):
         facts.append(f"Released: {release['publish_date']}")
     if release.get("track_count"):
-        facts.append(f"{release['track_count']} tracks")
+        facts.append(_plural(release["track_count"], "track"))
     if facts:
         lines.append(" · ".join(facts))
     return "\n".join(lines)

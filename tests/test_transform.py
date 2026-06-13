@@ -135,3 +135,10 @@ def test_format_label_and_genre_and_chart_headers():
     assert transform.format_label(_fixture("label.json")).startswith("Label #")
     assert transform.format_genre(_fixture("genre.json")).startswith("Genre #")
     assert transform.format_chart(_fixture("chart.json")).startswith("Chart #")
+
+
+def test_format_release_summary_pluralizes_tracks():
+    one = transform.format_release_summary({"id": 1, "name": "R", "artists": [], "track_count": 1})
+    many = transform.format_release_summary({"id": 2, "name": "R", "artists": [], "track_count": 3})
+    assert "1 track" in one and "1 tracks" not in one
+    assert "3 tracks" in many
