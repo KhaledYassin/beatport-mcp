@@ -816,10 +816,10 @@ TRACK = {
     "key": {"name": "A Minor"},
     "genre": {"id": 15, "name": "Progressive House"},
     "length": "10:33",
+    "publish_date": "2009-09-22",  # top-level on the track (verified Task 5)
     "release": {
         "id": 999, "name": "For Lack of a Better Name",
         "label": {"id": 5, "name": "mau5trap"},
-        "publish_date": "2009-09-22",
     },
     "sample_url": "https://geo-samples.beatport.com/strobe.mp3",
 }
@@ -839,6 +839,19 @@ def test_format_track_full_block():
 def test_format_track_tolerates_missing_fields():
     out = transform.format_track({"id": 7, "name": "Bare", "artists": []})
     assert out.startswith('Track #7 — "Bare" by Unknown artist')
+
+
+def test_format_track_real_fixture():
+    # Grounds the formatter against the real captured Beatport track (Task 5).
+    import json
+    from pathlib import Path
+
+    track = json.loads(Path("tests/fixtures/track.json").read_text())
+    out = transform.format_track(track)
+    assert out.startswith("Track #")
+    assert "Camelot 1A" in out          # native camelot_number/letter passthrough
+    assert "BPM:" in out
+    assert "2024-09-13" in out          # top-level publish_date
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
@@ -894,7 +907,7 @@ def format_track(track: dict) -> str:
     if label:
         rel.append(f"Label: {label}")
     if release.get("name"):
-        date = release.get("publish_date")
+        date = track.get("publish_date")  # publish_date is top-level on the track (Task 5)
         rel.append(f"Release: {release['name']}" + (f" ({date})" if date else ""))
     if rel:
         lines.append(" · ".join(rel))
@@ -907,7 +920,7 @@ def format_track(track: dict) -> str:
 - [ ] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/test_transform.py -v`
-Expected: PASS (2 tests).
+Expected: PASS (3 tests).
 
 - [ ] **Step 5: Commit**
 
@@ -935,19 +948,31 @@ def test_format_track_summary_compact_line():
 
 
 def test_format_search_results_tracks():
-    data = {"results": [TRACK, {"id": 2, "name": "B", "artists": [{"name": "Y"}]}]}
+    # Beatport keys the result list by the search `type` (verified Task 5), not "results".
+    data = {"tracks": [TRACK, {"id": 2, "name": "B", "artists": [{"name": "Y"}]}]}
     out = transform.format_search_results(data, "tracks")
     assert out.splitlines()[0].startswith("#12345678 — Strobe")
     assert out.splitlines()[1].startswith("#2 — B · Y")
 
 
 def test_format_search_results_non_track_type():
-    data = {"results": [{"id": 3, "name": "Adam Beyer"}]}
+    data = {"artists": [{"id": 3, "name": "Adam Beyer"}]}
     assert transform.format_search_results(data, "artists") == "#3 — Adam Beyer"
 
 
 def test_format_search_results_empty():
-    assert transform.format_search_results({"results": []}, "tracks") == "No results."
+    assert transform.format_search_results({"tracks": []}, "tracks") == "No results."
+
+
+def test_format_search_results_real_fixture():
+    # Grounds against the real captured search payload (Task 5).
+    import json
+    from pathlib import Path
+
+    data = json.loads(Path("tests/fixtures/search_tracks.json").read_text())
+    out = transform.format_search_results(data, "tracks")
+    assert out                                  # non-empty
+    assert all(line.startswith("#") for line in out.splitlines())
 ```
 
 - [ ] **Step 2: Run tests to verify they fail**
@@ -969,8 +994,9 @@ def format_track_summary(track: dict) -> str:
 
 
 def format_search_results(data: dict, type: str) -> str:
-    # Envelope key confirmed in Task 5; default tolerates `results` or `data`.
-    items = data.get("results") or data.get("data") or []
+    # Beatport keys the result list by the search `type` (verified Task 5),
+    # e.g. {"tracks": [...], "count": N, "page": "1/1035", ...}.
+    items = data.get(type) or []
     if not items:
         return "No results."
     if type == "tracks":
@@ -981,7 +1007,7 @@ def format_search_results(data: dict, type: str) -> str:
 - [ ] **Step 4: Run tests to verify they pass**
 
 Run: `uv run pytest tests/test_transform.py -v`
-Expected: PASS (6 tests total in file).
+Expected: PASS (8 tests total in file).
 
 - [ ] **Step 5: Commit**
 
@@ -1015,7 +1041,7 @@ class _FakeClient:
         return {"id": track_id, "name": "Strobe", "artists": [{"name": "deadmau5"}]}
 
     async def search(self, query, type="tracks", page=1, per_page=25):
-        return {"results": [{"id": 1, "name": query, "artists": [{"name": "Z"}]}]}
+        return {"tracks": [{"id": 1, "name": query, "artists": [{"name": "Z"}]}]}
 
 
 @pytest.fixture(autouse=True)
@@ -1231,4 +1257,7 @@ at review time).
 
 **Type consistency:** `TokenStore(client_id, access_token, refresh_token, path)`, `.update(access_token, refresh_token)`, `.from_env()`, `refresh_tokens(client_id, refresh_token)`, `BeatportClient(store, http=None)`, `_request(path, params)`, `format_key(dict|None)`, `format_track(dict)`, `format_track_summary(dict)`, `format_search_results(data, type)`, `server._get_client()` — all names match across Tasks 3, 4, 6, 7, 8. ✓
 
-**Known assumption (verified in Task 5, not a gap):** hand-authored fixtures in Tasks 6–7 assume `key.name` like "A Minor", envelope key `results`, and preview field `sample_url`. Task 5 confirms or corrects each against live data before the formatters are considered done.
+**Task 5 reconciliation (applied):** the live probe corrected three assumptions, now baked into Tasks 6–8:
+- Search result list is keyed by the `type` (e.g. `{"tracks": [...]}`), NOT `results`/`data`. Other top-level keys: `count`, `page` (string `"1/1035"`), `per_page`, `next`, `previous`, `order`.
+- `publish_date` is **top-level on the track**, not under `release`.
+- `key` carries native `camelot_number`/`camelot_letter` (e.g. "Ab Minor" → 1A), so `format_key` uses Beatport's own Camelot; preview field is `sample_url`; trailing slashes work; `key.name` is full-word ("Ab Minor"). The `keys.py` parser handles this format and agrees with the native value as a fallback.
