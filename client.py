@@ -81,3 +81,50 @@ class BeatportClient:
 
     async def track(self, track_id: int) -> dict[str, Any]:
         return await self._request(f"catalog/tracks/{track_id}/")
+
+    async def list_tracks(self, genre_id: int | None = None, artist_id: int | None = None,
+                          label_id: int | None = None, bpm: int | None = None,
+                          key_id: int | None = None, name: str | None = None,
+                          ordering: str | None = None, page: int = 1,
+                          per_page: int = 25) -> dict[str, Any]:
+        return await self._request("catalog/tracks/", {
+            "genre_id": genre_id, "artist_id": artist_id, "label_id": label_id,
+            "bpm": bpm, "key_id": key_id, "name": name, "ordering": ordering,
+            "page": page, "per_page": per_page,
+        })
+
+    async def genres(self, per_page: int = 100) -> dict[str, Any]:
+        return await self._request("catalog/genres/", {"per_page": per_page})
+
+    async def genre(self, genre_id: int) -> dict[str, Any]:
+        return await self._request(f"catalog/genres/{genre_id}/")
+
+    async def genre_tracks(self, genre_id: int, per_page: int = 25) -> dict[str, Any]:
+        return await self._request(f"catalog/genres/{genre_id}/tracks/", {"per_page": per_page})
+
+    async def artist(self, artist_id: int) -> dict[str, Any]:
+        return await self._request(f"catalog/artists/{artist_id}/")
+
+    async def artist_tracks(self, artist_id: int, per_page: int = 25) -> dict[str, Any]:
+        return await self._request(f"catalog/artists/{artist_id}/tracks/", {"per_page": per_page})
+
+    async def release(self, release_id: int) -> dict[str, Any]:
+        return await self._request(f"catalog/releases/{release_id}/")
+
+    async def release_tracks(self, release_id: int, per_page: int = 25) -> dict[str, Any]:
+        return await self._request(f"catalog/releases/{release_id}/tracks/", {"per_page": per_page})
+
+    async def label(self, label_id: int) -> dict[str, Any]:
+        return await self._request(f"catalog/labels/{label_id}/")
+
+    async def label_releases(self, label_id: int, per_page: int = 25) -> dict[str, Any]:
+        return await self._request(f"catalog/labels/{label_id}/releases/", {"per_page": per_page})
+
+    async def charts(self, per_page: int = 25) -> dict[str, Any]:
+        return await self._request("catalog/charts/", {"per_page": per_page})
+
+    async def chart(self, chart_id: int) -> dict[str, Any]:
+        return await self._request(f"catalog/charts/{chart_id}/")
+
+    async def chart_tracks(self, chart_id: int, per_page: int = 25) -> dict[str, Any]:
+        return await self._request(f"catalog/charts/{chart_id}/tracks/", {"per_page": per_page})
