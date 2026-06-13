@@ -45,7 +45,7 @@ against a real token (see §11).
 |---|---|
 | Scope | Full read-only catalog; no personal library |
 | Architecture | Approach A — layered: `client` / `transform` / `server`, separate `auth` |
-| Auth | Env-seeded tokens + auto-refresh on 401; one-time PKCE bootstrap CLI |
+| Auth | Browser PKCE bootstrap CLI (primary user-facing auth) → env/file-seeded tokens + auto-refresh on 401 |
 | Tool design | Thin wrappers, LLM-trimmed responses, neutral key-notation enrichment |
 | DJ layer | Camelot as neutral additive metadata; no workflow logic in core |
 | Verification | User has live access — verify contracts and capture real fixtures |
@@ -82,7 +82,8 @@ pure modules (`transform`, `keys`) test with zero network.
 - **Dev (`[dependency-groups]`):** `ruff`, `pyright`, `pytest`, `pytest-asyncio`, `respx`.
 
 ### Tooling (configured in `pyproject.toml`)
-- **uv** for env/deps/run; add `[project.scripts] beatport-mcp = "main:main"` (fixes broken launch).
+- **uv** for env/deps/run; add `[project.scripts]` entries `beatport-mcp = "main:main"` (fixes
+  broken launch) and `beatport-auth = "auth:main"` (the browser-login bootstrap).
 - **ruff** for lint + format (single tool).
 - **pyright** strict-ish; full type hints (FastMCP derives tool schemas from hints + docstrings).
 - **pytest** + `pytest-asyncio`.
@@ -159,15 +160,22 @@ List tools emit one compact line per hit (`#id — title · artist · BPM · key
 
 ## 7. Auth & Token Lifecycle
 
-- **Bootstrap (`auth.py`, one-time):** Authorization Code + PKCE — open browser to
-  `/auth/o/authorize`, capture `code` via a localhost callback, exchange at `/auth/o/token/`,
-  print `CLIENT_ID`/`ACCESS_TOKEN`/`REFRESH_TOKEN` to paste into config.
-  - **Current reality:** the working token was grabbed from browser devtools without a confirmed
-    `client_id`/`redirect_uri`. The PKCE `redirect_uri` and `client_id` are **verify-live** items.
-    Until confirmed, the supported bootstrap is the devtools capture (the `client_id` is in the
-    devtools `POST /auth/o/token/` payload), documented in the README.
-- **Runtime:** seed from env → Bearer on every call → on `401`, refresh (needs `client_id`) and
-  retry once → persist rotated tokens to file.
+Browser-based login is the **primary, user-facing auth path** — it is how a user makes the
+server work. There is no expectation that an end user hand-copies tokens.
+
+- **Bootstrap (`beatport-auth` CLI → `auth.py`, one-time):** the user runs the command; it opens
+  the browser to `/auth/o/authorize`, the user logs into Beatport and authorizes, a localhost
+  callback captures the `code`, it is exchanged at `/auth/o/token/`, and the resulting
+  `ACCESS_TOKEN`/`REFRESH_TOKEN` (+ `CLIENT_ID`) are persisted to the token file. Exposed as a
+  `[project.scripts]` entry alongside `beatport-mcp`.
+- **Runtime (`beatport-mcp`):** seed from env / token file → Bearer on every call → on `401`,
+  refresh (needs `client_id`) and retry once → persist rotated tokens to file.
+- **Feasibility gate (verify-live):** the browser flow needs a `client_id` + a `redirect_uri`
+  Beatport accepts. With no self-serve app registration, whether a loopback redirect is
+  whitelisted is unknown (§11 #1, #7). The current working token was grabbed from devtools; that
+  devtools capture is an **internal stopgap for our verification only — not the shipped UX.** If a
+  loopback redirect is rejected, we adapt the capture mechanism while preserving the
+  browser-login UX.
 
 ## 8. Data Flow
 
