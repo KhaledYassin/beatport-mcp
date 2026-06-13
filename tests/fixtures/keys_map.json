@@ -1,0 +1,138 @@
+{
+  "1": {
+    "name": "Ab Minor",
+    "camelot": "1A"
+  },
+  "2": {
+    "name": "Eb Minor",
+    "camelot": "2A"
+  },
+  "3": {
+    "name": "Bb Minor",
+    "camelot": "3A"
+  },
+  "4": {
+    "name": "F Minor",
+    "camelot": "4A"
+  },
+  "5": {
+    "name": "C Minor",
+    "camelot": "5A"
+  },
+  "6": {
+    "name": "G Minor",
+    "camelot": "6A"
+  },
+  "7": {
+    "name": "D Minor",
+    "camelot": "7A"
+  },
+  "8": {
+    "name": "A Minor",
+    "camelot": "8A"
+  },
+  "9": {
+    "name": "E Minor",
+    "camelot": "9A"
+  },
+  "10": {
+    "name": "B Minor",
+    "camelot": "10A"
+  },
+  "11": {
+    "name": "F# Minor",
+    "camelot": "11A"
+  },
+  "12": {
+    "name": "Db Minor",
+    "camelot": "12A"
+  },
+  "13": {
+    "name": "B Major",
+    "camelot": "1B"
+  },
+  "14": {
+    "name": "F# Major",
+    "camelot": "2B"
+  },
+  "15": {
+    "name": "Db Major",
+    "camelot": "3B"
+  },
+  "16": {
+    "name": "Ab Major",
+    "camelot": "4B"
+  },
+  "17": {
+    "name": "Eb Major",
+    "camelot": "5B"
+  },
+  "18": {
+    "name": "Bb Major",
+    "camelot": "6B"
+  },
+  "19": {
+    "name": "F Major",
+    "camelot": "7B"
+  },
+  "20": {
+    "name": "C Major",
+    "camelot": "8B"
+  },
+  "21": {
+    "name": "G Major",
+    "camelot": "9B"
+  },
+  "22": {
+    "name": "D Major",
+    "camelot": "10B"
+  },
+  "23": {
+    "name": "A Major",
+    "camelot": "11B"
+  },
+  "24": {
+    "name": "E Major",
+    "camelot": "12B"
+  },
+  "25": {
+    "name": "A# Major",
+    "camelot": "6B"
+  },
+  "26": {
+    "name": "A# Minor",
+    "camelot": "3A"
+  },
+  "27": {
+    "name": "C# Major",
+    "camelot": "3B"
+  },
+  "28": {
+    "name": "C# Minor",
+    "camelot": "12A"
+  },
+  "29": {
+    "name": "D# Major",
+    "camelot": "5B"
+  },
+  "30": {
+    "name": "D# Minor",
+    "camelot": "2A"
+  },
+  "31": {
+    "name": "G# Major",
+    "camelot": "4B"
+  },
+  "32": {
+    "name": "G# Minor",
+    "camelot": "1A"
+  },
+  "33": {
+    "name": "Gb Major",
+    "camelot": "2B"
+  },
+  "34": {
+    "name": "Gb Minor",
+    "camelot": "11A"
+  }
+}
