@@ -68,3 +68,22 @@ def format_key(key_obj: dict | None) -> str | None:
     if not camelot:
         return name
     return f"{name} (Camelot {camelot}, Open Key {to_open_key(camelot)})"
+
+
+# Canonical Beatport key_ids 1-24 (verified live). Keyed by (_parse_key root, mode);
+# flats are normalised to sharps by _parse_key, so each (root, mode) maps to one id.
+_NAME_TO_ID: dict[tuple[str, str], int] = {
+    ("G#", "minor"): 1, ("D#", "minor"): 2, ("A#", "minor"): 3, ("F", "minor"): 4,
+    ("C", "minor"): 5, ("G", "minor"): 6, ("D", "minor"): 7, ("A", "minor"): 8,
+    ("E", "minor"): 9, ("B", "minor"): 10, ("F#", "minor"): 11, ("C#", "minor"): 12,
+    ("B", "major"): 13, ("F#", "major"): 14, ("C#", "major"): 15, ("G#", "major"): 16,
+    ("D#", "major"): 17, ("A#", "major"): 18, ("F", "major"): 19, ("C", "major"): 20,
+    ("G", "major"): 21, ("D", "major"): 22, ("A", "major"): 23, ("E", "major"): 24,
+}
+
+
+def key_name_to_id(name: str | None) -> int | None:
+    """Resolve a musical key name (e.g. 'A minor', 'Ab Minor', 'A# min') to Beatport's
+    canonical key_id (1-24). Enharmonic spellings resolve to the same canonical id."""
+    parsed = _parse_key(name)
+    return _NAME_TO_ID.get(parsed) if parsed else None

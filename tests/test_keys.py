@@ -38,3 +38,38 @@ def test_format_key_prefers_native_camelot_fields():
 def test_format_key_falls_back_to_plain_name():
     assert format_key({"name": "Weird"}) == "Weird"
     assert format_key(None) is None
+
+
+def test_key_name_to_id_canonical():
+    from keys import key_name_to_id
+    assert key_name_to_id("A Minor") == 8
+    assert key_name_to_id("C Major") == 20
+    assert key_name_to_id("Ab Minor") == 1
+    assert key_name_to_id("Db Major") == 15
+    assert key_name_to_id("F# Minor") == 11
+
+
+def test_key_name_to_id_short_and_enharmonic_forms():
+    from keys import key_name_to_id
+    assert key_name_to_id("A min") == 8          # short mode token
+    assert key_name_to_id("G# Minor") == 1       # enharmonic of Ab Minor -> canonical id 1
+    assert key_name_to_id("A# Minor") == 3       # enharmonic of Bb Minor -> canonical id 3
+
+
+def test_key_name_to_id_unknown():
+    from keys import key_name_to_id
+    assert key_name_to_id("not a key") is None
+    assert key_name_to_id("") is None
+    assert key_name_to_id(None) is None
+
+
+def test_key_name_to_id_matches_live_map():
+    # Every canonical id (1-24) in the live sweep must round-trip by name.
+    import json
+    from pathlib import Path
+
+    from keys import key_name_to_id
+    m = json.loads(Path("tests/fixtures/keys_map.json").read_text())
+    for sid, entry in m.items():
+        if 1 <= int(sid) <= 24:
+            assert key_name_to_id(entry["name"]) == int(sid), entry["name"]
