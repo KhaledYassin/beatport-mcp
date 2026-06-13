@@ -129,3 +129,13 @@ async def test_entity_endpoints_resolve_paths(tmp_path):
     assert await client.charts() is not None
     assert await client.chart(2) is not None
     assert await client.chart_tracks(2) is not None
+
+
+@respx.mock
+async def test_non_json_response_raises_beatport_error(tmp_path):
+    respx.get("https://api.beatport.com/v4/catalog/tracks/1/").mock(
+        return_value=httpx.Response(200, text="<html>oops</html>")
+    )
+    client = BeatportClient(_store(tmp_path))
+    with pytest.raises(BeatportError, match="non-JSON"):
+        await client.track(1)

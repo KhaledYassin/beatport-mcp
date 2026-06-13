@@ -20,6 +20,25 @@ def _title(track: dict) -> str:
     return f"{name} ({mix})" if mix and mix != "Original Mix" else name
 
 
+# catalog/tracks/ and genre-track lists report `count` as this hard cap, not a real total.
+_COUNT_CAP = 10000
+
+
+def _date(value: object) -> str:
+    """Render just the date part of a Beatport date or datetime string."""
+    return str(value).split("T", 1)[0]
+
+
+def _pagination_footer(data: dict) -> str | None:
+    bits = []
+    if data.get("page"):
+        bits.append(f"Page {data['page']}")
+    count = data.get("count")
+    if count is not None:
+        bits.append("10000+ results" if count == _COUNT_CAP else f"{count} results")
+    return " · ".join(bits) if bits else None
+
+
 def format_track(track: dict) -> str:
     lines = [f'Track #{track.get("id")} — "{_title(track)}" by {_artist_names(track)}']
 
@@ -44,7 +63,7 @@ def format_track(track: dict) -> str:
         rel.append(f"Label: {label}")
     if release.get("name"):
         date = track.get("publish_date")  # publish_date is top-level on the track (Task 5)
-        rel.append(f"Release: {release['name']}" + (f" ({date})" if date else ""))
+        rel.append(f"Release: {release['name']}" + (f" ({_date(date)})" if date else ""))
     if rel:
         lines.append(" · ".join(rel))
 
@@ -73,24 +92,8 @@ def format_search_results(data: dict, type: str) -> str:
         body = "\n".join(format_track_summary(t) for t in items)
     else:
         body = "\n".join(f"#{item.get('id')} — {item.get('name', '?')}" for item in items)
-    footer = []
-    if data.get("page"):
-        footer.append(f"Page {data['page']}")
-    if data.get("count") is not None:
-        footer.append(f"{data['count']} results")
-    if footer:
-        body += "\n" + " · ".join(footer)
-    return body
-
-
-def _pagination_footer(data: dict) -> str | None:
-    bits = []
-    if data.get("page"):
-        bits.append(f"Page {data['page']}")
-    count = data.get("count")
-    if count is not None:
-        bits.append("10000+ results" if count == 10000 else f"{count} results")
-    return " · ".join(bits) if bits else None
+    footer = _pagination_footer(data)
+    return body + ("\n" + footer if footer else "")
 
 
 def format_track_list(data: dict) -> str:
@@ -118,7 +121,7 @@ def format_release_summary(release: dict) -> str:
     if release.get("track_count"):
         bits.append(_plural(release["track_count"], "track"))
     if release.get("publish_date"):
-        bits.append(release["publish_date"])
+        bits.append(_date(release["publish_date"]))
     return " · ".join(bits)
 
 
@@ -157,7 +160,7 @@ def format_release(release: dict) -> str:
     if release.get("catalog_number"):
         facts.append(f"Cat: {release['catalog_number']}")
     if release.get("publish_date"):
-        facts.append(f"Released: {release['publish_date']}")
+        facts.append(f"Released: {_date(release['publish_date'])}")
     if release.get("track_count"):
         facts.append(_plural(release["track_count"], "track"))
     if facts:
@@ -187,9 +190,9 @@ def format_chart(chart: dict) -> str:
     if isinstance(artist, dict) and artist.get("name"):
         facts.append(f"By: {artist['name']}")
     if chart.get("track_count"):
-        facts.append(f"{chart['track_count']} tracks")
+        facts.append(_plural(chart["track_count"], "track"))
     if chart.get("publish_date"):
-        facts.append(f"Published: {chart['publish_date']}")
+        facts.append(f"Published: {_date(chart['publish_date'])}")
     if facts:
         lines.append(" · ".join(facts))
     if chart.get("description"):

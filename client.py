@@ -41,7 +41,10 @@ def _handle(resp: httpx.Response) -> dict[str, Any]:
         retry = resp.headers.get("Retry-After", "a few")
         raise BeatportError(f"Rate limited — retry after {retry} seconds.")
     resp.raise_for_status()
-    return resp.json()
+    try:
+        return resp.json()
+    except ValueError as exc:  # non-JSON body on a 2xx (e.g. an HTML error page)
+        raise BeatportError("Unexpected non-JSON response from Beatport.") from exc
 
 
 class BeatportClient:

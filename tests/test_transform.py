@@ -142,3 +142,20 @@ def test_format_release_summary_pluralizes_tracks():
     many = transform.format_release_summary({"id": 2, "name": "R", "artists": [], "track_count": 3})
     assert "1 track" in one and "1 tracks" not in one
     assert "3 tracks" in many
+
+
+def test_format_chart_trims_date_and_pluralizes():
+    chart = {"id": 1, "name": "C", "track_count": 1, "publish_date": "2026-06-13T08:08:28-06:00"}
+    out = transform.format_chart(chart)
+    assert "Published: 2026-06-13" in out and "T08:08" not in out
+    assert "1 track" in out and "1 tracks" not in out
+
+
+def test_format_search_results_footer_reuses_pagination_helper():
+    data = {
+        "tracks": [{"id": 1, "name": "T", "artists": [{"name": "A"}]}],
+        "page": "1/5",
+        "count": 120,
+    }
+    out = transform.format_search_results(data, "tracks")
+    assert out.splitlines()[-1] == "Page 1/5 · 120 results"
