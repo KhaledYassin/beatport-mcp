@@ -1,11 +1,45 @@
 [project]
 name = "beatport-mcp"
 version = "0.1.0"
-description = "MCP for Beatport developer API."
+description = "MCP server for the Beatport v4 catalog API."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "httpx>=0.28.1",
     "mcp[cli]>=1.5.0",
-    "requests>=2.32.3",
+    "httpx>=0.28.1",
 ]
+
+[project.scripts]
+beatport-mcp = "main:main"
+beatport-auth = "auth:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+include = ["main.py", "server.py", "client.py", "transform.py", "keys.py", "auth.py"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "respx>=0.21.1",
+    "ruff>=0.6.0",
+    "pyright>=1.1.380",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pyright]
+typeCheckingMode = "standard"
+pythonVersion = "3.12"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

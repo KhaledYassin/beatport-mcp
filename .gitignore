@@ -13,4 +13,5 @@ wheels/
 .env
 
 # token file
-soundcloud_token.json
+.beatport_token.json
+.beatport-mcp/
