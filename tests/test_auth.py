@@ -59,3 +59,19 @@ async def test_refresh_tokens_posts_grant(tmp_path):
     assert sent["grant_type"] == "refresh_token"
     assert sent["refresh_token"] == "r"
     assert sent["client_id"] == "cid"
+
+
+def test_persisted_file_wins_over_seed(tmp_path):
+    path = tmp_path / "token.json"
+    path.write_text(json.dumps({"access_token": "fresh", "refresh_token": "fresh_r"}))
+    # a stale env/explicit seed must not override the live persisted tokens
+    store = TokenStore(client_id="cid", access_token="stale", refresh_token="stale_r", path=path)
+    assert store.access_token == "fresh"
+    assert store.refresh_token == "fresh_r"
+
+
+def test_corrupt_token_file_falls_back_to_seed(tmp_path):
+    path = tmp_path / "token.json"
+    path.write_text("{ not json")
+    store = TokenStore(client_id="cid", access_token="seed", path=path)
+    assert store.access_token == "seed"

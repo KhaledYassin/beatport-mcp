@@ -6,6 +6,7 @@ HTTP problems are raised as BeatportError with a user-facing message.
 
 from __future__ import annotations
 
+import asyncio
 from typing import Any
 
 import httpx
@@ -51,6 +52,7 @@ class BeatportClient:
     def __init__(self, store: TokenStore, http: httpx.AsyncClient | None = None) -> None:
         self._store = store
         self._http = http or httpx.AsyncClient(base_url=BASE_URL, timeout=30.0)
+        self._refresh_lock = asyncio.Lock()
 
     def _headers(self) -> dict[str, str]:
         return {
@@ -58,20 +60,26 @@ class BeatportClient:
             "Accept": "application/json",
         }
 
-    async def _refresh(self) -> None:
-        try:
-            data = await refresh_tokens(self._store.client_id, self._store.refresh_token or "")
-        except httpx.HTTPError as exc:
-            raise BeatportError(
-                "Authentication failed — refresh your token (`uv run beatport-auth`)."
-            ) from exc
-        self._store.update(data["access_token"], data.get("refresh_token"))
+    async def _refresh(self, used_token: str | None) -> None:
+        # Serialise refreshes: if several requests 401 at once, only the first refreshes;
+        # the rest see the already-updated token and skip the (rotation-sensitive) round-trip.
+        async with self._refresh_lock:
+            if self._store.access_token != used_token:
+                return
+            try:
+                data = await refresh_tokens(self._store.client_id, self._store.refresh_token or "")
+            except httpx.HTTPError as exc:
+                raise BeatportError(
+                    "Authentication failed — refresh your token (`uv run beatport-auth`)."
+                ) from exc
+            self._store.update(data["access_token"], data.get("refresh_token"))
 
     async def _request(self, path: str, params: dict | None = None) -> dict[str, Any]:
         clean = _clean_params(params)
+        used_token = self._store.access_token
         resp = await self._http.get(path, params=clean, headers=self._headers())
         if resp.status_code == 401:
-            await self._refresh()
+            await self._refresh(used_token)
             resp = await self._http.get(path, params=clean, headers=self._headers())
         return _handle(resp)
 

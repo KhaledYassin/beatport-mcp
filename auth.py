@@ -39,12 +39,20 @@ class TokenStore:
                  refresh_token: str | None = None, path: Path | None = None) -> None:
         self.client_id = client_id
         self.path = path or _token_path()
-        self.access_token = access_token
-        self.refresh_token = refresh_token
-        if self.access_token is None and self.path.exists():
-            saved = json.loads(self.path.read_text())
-            self.access_token = saved.get("access_token")
-            self.refresh_token = saved.get("refresh_token")
+        # The persisted file holds the live (possibly rotated) tokens, so it wins once it
+        # exists; the provided access/refresh values only seed the very first run. To reset
+        # credentials, delete the token file or re-run `beatport-auth`.
+        saved = self._load()
+        self.access_token = saved.get("access_token") if saved else access_token
+        self.refresh_token = saved.get("refresh_token") if saved else refresh_token
+
+    def _load(self) -> dict | None:
+        if not self.path.exists():
+            return None
+        try:
+            return json.loads(self.path.read_text())
+        except (OSError, ValueError):
+            return None  # unreadable/corrupt token file -> fall back to the seed
 
     @classmethod
     def from_env(cls) -> TokenStore:
@@ -62,9 +70,14 @@ class TokenStore:
         if refresh_token:
             self.refresh_token = refresh_token
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.path.write_text(json.dumps(
+        payload = json.dumps(
             {"access_token": self.access_token, "refresh_token": self.refresh_token}
-        ))
+        )
+        # Create with owner-only perms from the start (no default-umask window); the chmod
+        # afterwards also tightens a pre-existing file that had looser permissions.
+        fd = os.open(self.path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        with os.fdopen(fd, "w") as handle:
+            handle.write(payload)
         self.path.chmod(0o600)
 
 

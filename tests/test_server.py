@@ -128,3 +128,27 @@ async def test_get_release_and_label_and_genre_and_chart(_catalog):
     assert "mau5trap" in (await server.get_label(3))
     assert (await server.get_genre(5)).startswith("Genre #5")
     assert (await server.get_chart(2)).startswith("Chart #2")
+
+
+async def test_get_artist_degrades_when_tracks_fail(monkeypatch):
+    class _PartialClient:
+        async def artist(self, artist_id):
+            return {"id": artist_id, "name": "X"}
+
+        async def artist_tracks(self, artist_id, per_page=25):
+            from client import BeatportError
+            raise BeatportError("boom")
+
+    monkeypatch.setattr(server, "_get_client", lambda: _PartialClient())
+    out = await server.get_artist(9)
+    assert out.startswith("Artist #9 — X")          # primary detail still shows
+    assert "(tracks unavailable: boom)" in out       # secondary list degrades
+
+
+async def test_tool_returns_error_string_when_credentials_missing(monkeypatch):
+    def _raise():
+        raise RuntimeError("CLIENT_ID is not set.")
+
+    monkeypatch.setattr(server, "_get_client", _raise)
+    out = await server.list_genres()
+    assert out.startswith("Error:") and "CLIENT_ID" in out

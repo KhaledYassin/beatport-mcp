@@ -139,3 +139,22 @@ async def test_non_json_response_raises_beatport_error(tmp_path):
     client = BeatportClient(_store(tmp_path))
     with pytest.raises(BeatportError, match="non-JSON"):
         await client.track(1)
+
+
+@respx.mock
+async def test_concurrent_401s_refresh_once(tmp_path):
+    import asyncio
+
+    # Response depends on the bearer token (not call order) so the test is interleave-proof.
+    def _resp(request):
+        ok = request.headers.get("Authorization") == "Bearer new"
+        return httpx.Response(200, json={"id": 1}) if ok else httpx.Response(401)
+
+    respx.get("https://api.beatport.com/v4/catalog/tracks/1/").mock(side_effect=_resp)
+    token = respx.post("https://api.beatport.com/v4/auth/o/token/").mock(
+        return_value=httpx.Response(200, json={"access_token": "new", "refresh_token": "r2"})
+    )
+    client = BeatportClient(_store(tmp_path, access="old"))
+    results = await asyncio.gather(client.track(1), client.track(1))
+    assert all(r["id"] == 1 for r in results)
+    assert token.call_count == 1  # only one refresh despite two concurrent 401s
