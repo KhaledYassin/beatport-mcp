@@ -1,0 +1,366 @@
+{
+  "tracks": [
+    {
+      "artists": [
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 128,
+      "bsrc_remixer": [],
+      "catalog_number": "MAU50610BP1",
+      "current_status": {
+        "id": 7,
+        "name": "Exclusive",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/7/"
+      },
+      "encoded_date": "2024-08-25T14:35:53-06:00",
+      "exclusive": true,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 90,
+        "name": "Melodic House & Techno",
+        "slug": "melodic-house-techno",
+        "url": "https://api.beatport.com/v4/catalog/genres/90/"
+      },
+      "id": 19431036,
+      "image": {
+        "id": 40368086,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/32539e19-1235-4808-a986-aaed78ef8760.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/32539e19-1235-4808-a986-aaed78ef8760.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "GBTDG1302861",
+      "key": {
+        "camelot_number": 1,
+        "camelot_letter": "A",
+        "chord_type": {
+          "id": 1,
+          "name": "Minor",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/1/"
+        },
+        "id": 1,
+        "is_sharp": false,
+        "is_flat": true,
+        "letter": "A",
+        "name": "Ab Minor",
+        "url": "https://api.beatport.com/v4/catalog/keys/1/"
+      },
+      "label_track_identifier": null,
+      "length": "4:45",
+      "length_ms": 285000,
+      "mix_name": "Layton Giordani Extended Remix",
+      "name": "Strobe",
+      "new_release_date": "2024-09-13",
+      "pre_order": false,
+      "pre_order_date": "2024-09-05",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.86,
+        "display": "\u00a31.86"
+      },
+      "publish_date": "2024-09-13",
+      "release": {
+        "id": 4706244,
+        "name": "Strobe (Layton Giordani Extended Remix)",
+        "image": {
+          "id": 40519330,
+          "uri": "https://geo-media.beatport.com/image_size/500x500/bf50982c-631a-41ce-8fa9-bad3f619e281.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/bf50982c-631a-41ce-8fa9-bad3f619e281.jpg"
+        },
+        "label": {
+          "id": 6446,
+          "name": "mau5trap",
+          "image": {
+            "id": 34992622,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+          },
+          "slug": "mau5trap"
+        },
+        "slug": "strobe-layton-giordani-extended-remix"
+      },
+      "remixers": [
+        {
+          "id": 374036,
+          "image": {
+            "id": 44640509,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/7192e7a2-3c50-4c76-bb8a-2985d89a3a14.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/7192e7a2-3c50-4c76-bb8a-2985d89a3a14.jpg"
+          },
+          "name": "Layton Giordani",
+          "slug": "layton-giordani",
+          "url": "https://api.beatport.com/v4/catalog/artists/374036/"
+        }
+      ],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/32539e19-1235-4808-a986-aaed78ef8760.LOFI.mp3",
+      "sample_start_ms": 114000,
+      "sample_end_ms": 204000,
+      "slug": "strobe",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/19431036/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 130,
+      "bsrc_remixer": [],
+      "catalog_number": "MAU50616ES",
+      "current_status": {
+        "id": 10,
+        "name": "General Content",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/10/"
+      },
+      "encoded_date": "2024-11-21T22:27:39-07:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 90,
+        "name": "Melodic House & Techno",
+        "slug": "melodic-house-techno",
+        "url": "https://api.beatport.com/v4/catalog/genres/90/"
+      },
+      "id": 19797533,
+      "image": {
+        "id": 41141082,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/540580ef-7c7c-46f7-abeb-d06b20ba72b3.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/540580ef-7c7c-46f7-abeb-d06b20ba72b3.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "GBTDG1302885",
+      "key": {
+        "camelot_number": 1,
+        "camelot_letter": "A",
+        "chord_type": {
+          "id": 1,
+          "name": "Minor",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/1/"
+        },
+        "id": 1,
+        "is_sharp": false,
+        "is_flat": true,
+        "letter": "A",
+        "name": "Ab Minor",
+        "url": "https://api.beatport.com/v4/catalog/keys/1/"
+      },
+      "label_track_identifier": null,
+      "length": "6:26",
+      "length_ms": 386000,
+      "mix_name": "Victor Ruiz Remix",
+      "name": "Strobe",
+      "new_release_date": "2024-12-13",
+      "pre_order": false,
+      "pre_order_date": "2024-12-10",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.14,
+        "display": "\u00a31.14"
+      },
+      "publish_date": "2024-12-13",
+      "release": {
+        "id": 4831183,
+        "name": "Strobe (2024 Remixes)",
+        "image": {
+          "id": 41355500,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/06a24f30-5cab-4cb0-8af6-f0915d1d17aa.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/06a24f30-5cab-4cb0-8af6-f0915d1d17aa.jpg"
+        },
+        "label": {
+          "id": 6446,
+          "name": "mau5trap",
+          "image": {
+            "id": 34992622,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+          },
+          "slug": "mau5trap"
+        },
+        "slug": "strobe-2024-remixes"
+      },
+      "remixers": [
+        {
+          "id": 105392,
+          "image": {
+            "id": 47571084,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/bedcc99f-0c84-41d5-bca5-4675f3a4cdbc.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/bedcc99f-0c84-41d5-bca5-4675f3a4cdbc.jpg"
+          },
+          "name": "Victor Ruiz",
+          "slug": "victor-ruiz",
+          "url": "https://api.beatport.com/v4/catalog/artists/105392/"
+        }
+      ],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/e37a768b-4340-4097-8d56-6f243ba237a1.LOFI.mp3",
+      "sample_start_ms": 154400,
+      "sample_end_ms": 274400,
+      "slug": "strobe",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/19797533/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 498574,
+          "image": {
+            "id": 45735059,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/9fa42023-ba2c-4942-baef-e067c016638b.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/9fa42023-ba2c-4942-baef-e067c016638b.jpg"
+          },
+          "name": "ANOTR",
+          "slug": "anotr",
+          "url": "https://api.beatport.com/v4/catalog/artists/498574/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": true,
+      "bpm": 124,
+      "bsrc_remixer": [],
+      "catalog_number": "DFTDS049D",
+      "current_status": {
+        "id": 10,
+        "name": "General Content",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/10/"
+      },
+      "encoded_date": "2015-09-09T13:30:24-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 12,
+        "name": "Deep House",
+        "slug": "deep-house",
+        "url": "https://api.beatport.com/v4/catalog/genres/12/"
+      },
+      "id": 7066037,
+      "image": {
+        "id": 12246748,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/ac514c95-8dca-411b-9772-0ff7255bcefa.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/ac514c95-8dca-411b-9772-0ff7255bcefa.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "GBCPZ1508970",
+      "key": {
+        "camelot_number": 10,
+        "camelot_letter": "A",
+        "chord_type": {
+          "id": 1,
+          "name": "Minor",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/1/"
+        },
+        "id": 10,
+        "is_sharp": false,
+        "is_flat": false,
+        "letter": "B",
+        "name": "B Minor",
+        "url": "https://api.beatport.com/v4/catalog/keys/10/"
+      },
+      "label_track_identifier": "317083253",
+      "length": "7:32",
+      "length_ms": 452948,
+      "mix_name": "Original Mix",
+      "name": "Strobe",
+      "new_release_date": "2015-10-05",
+      "pre_order": false,
+      "pre_order_date": null,
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.14,
+        "display": "\u00a31.14"
+      },
+      "publish_date": "2015-10-05",
+      "release": {
+        "id": 1606408,
+        "name": "Strobe EP",
+        "image": {
+          "id": 12246737,
+          "uri": "https://geo-media.beatport.com/image_size/500x500/d79b4b74-6ad7-4092-94b0-fc46917e913e.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/d79b4b74-6ad7-4092-94b0-fc46917e913e.jpg"
+        },
+        "label": {
+          "id": 32831,
+          "name": "DFTD",
+          "image": {
+            "id": 7450138,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/aaa16d7d-90b2-40d3-b579-2194a9f2e6ae.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/aaa16d7d-90b2-40d3-b579-2194a9f2e6ae.jpg"
+          },
+          "slug": "dftd"
+        },
+        "slug": "strobe-ep"
+      },
+      "remixers": [],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/80674209-a19f-4857-b4e0-08d070539a74.LOFI.mp3",
+      "sample_start_ms": 181179,
+      "sample_end_ms": 301179,
+      "slug": "strobe",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/7066037/",
+      "is_hype": false
+    }
+  ],
+  "order": [
+    "tracks"
+  ],
+  "next": "api.beatport.com/v4/catalog/search/?q=strobe&type=tracks&page=2&per_page=3",
+  "previous": null,
+  "count": 3103,
+  "page": "1/1035",
+  "per_page": 3
+}
