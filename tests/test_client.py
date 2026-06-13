@@ -77,3 +77,16 @@ async def test_search_clamps_per_page_and_drops_none(tmp_path):
     params = route.calls.last.request.url.params
     assert params["per_page"] == "100"      # clamped
     assert params["q"] == "strobe"
+
+
+@respx.mock
+async def test_failed_refresh_raises_friendly_error(tmp_path):
+    respx.get("https://api.beatport.com/v4/catalog/tracks/1/").mock(
+        return_value=httpx.Response(401)
+    )
+    respx.post("https://api.beatport.com/v4/auth/o/token/").mock(
+        return_value=httpx.Response(400, json={"error": "invalid_grant"})
+    )
+    client = BeatportClient(_store(tmp_path))
+    with pytest.raises(BeatportError, match="Authentication failed"):
+        await client.track(1)

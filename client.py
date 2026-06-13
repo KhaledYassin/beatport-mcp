@@ -56,7 +56,12 @@ class BeatportClient:
         }
 
     async def _refresh(self) -> None:
-        data = await refresh_tokens(self._store.client_id, self._store.refresh_token or "")
+        try:
+            data = await refresh_tokens(self._store.client_id, self._store.refresh_token or "")
+        except httpx.HTTPError as exc:
+            raise BeatportError(
+                "Authentication failed — refresh your token (`uv run beatport-auth`)."
+            ) from exc
         self._store.update(data["access_token"], data.get("refresh_token"))
 
     async def _request(self, path: str, params: dict | None = None) -> dict[str, Any]:
