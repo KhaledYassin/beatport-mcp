@@ -1,0 +1,1559 @@
+{
+  "next": null,
+  "previous": null,
+  "count": 46,
+  "page": "1/1",
+  "per_page": 100,
+  "results": [
+    {
+      "id": 95,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "140 / Deep Dubstep / Grime",
+      "enabled": true,
+      "slug": "140-deep-dubstep-grime",
+      "sub_genres": [
+        {
+          "id": 241,
+          "name": "Grime",
+          "slug": "grime",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/241/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/95/",
+      "launch_date": null
+    },
+    {
+      "id": 102,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "African",
+      "enabled": true,
+      "slug": "african",
+      "sub_genres": [
+        {
+          "id": 281,
+          "name": "Afro R&B",
+          "slug": "afro-rb",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/281/",
+          "enabled": true
+        },
+        {
+          "id": 279,
+          "name": "Afrobeats",
+          "slug": "afrobeats",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/279/",
+          "enabled": true
+        },
+        {
+          "id": 280,
+          "name": "Afropop",
+          "slug": "afropop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/280/",
+          "enabled": true
+        },
+        {
+          "id": 282,
+          "name": "Alte",
+          "slug": "alte",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/282/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/102/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 89,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Afro House",
+      "enabled": true,
+      "slug": "afro-house",
+      "sub_genres": [
+        {
+          "id": 273,
+          "name": "3Step",
+          "slug": "3step",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/273/",
+          "enabled": true
+        },
+        {
+          "id": 240,
+          "name": "Afro / Latin",
+          "slug": "afro-latin",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/240/",
+          "enabled": true
+        },
+        {
+          "id": 274,
+          "name": "Afro Melodic",
+          "slug": "afro-melodic",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/274/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/89/",
+      "launch_date": null
+    },
+    {
+      "id": 98,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Amapiano",
+      "enabled": true,
+      "slug": "amapiano",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/98/",
+      "launch_date": null
+    },
+    {
+      "id": 100,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Ambient / Experimental",
+      "enabled": true,
+      "slug": "ambient-experimental",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/100/",
+      "launch_date": null
+    },
+    {
+      "id": 85,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Bass / Club",
+      "enabled": true,
+      "slug": "bass-club",
+      "sub_genres": [
+        {
+          "id": 238,
+          "name": "Bass/Club",
+          "slug": "bassclub",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/238/",
+          "enabled": true
+        },
+        {
+          "id": 197,
+          "name": "Global Club",
+          "slug": "global-club",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/197/",
+          "enabled": true
+        },
+        {
+          "id": 237,
+          "name": "Gqom",
+          "slug": "gqom",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/237/",
+          "enabled": true
+        },
+        {
+          "id": 236,
+          "name": "Jersey Club",
+          "slug": "jersey-club",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/236/",
+          "enabled": true
+        },
+        {
+          "id": 196,
+          "name": "Juke / Footwork",
+          "slug": "juke-footwork",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/196/",
+          "enabled": true
+        },
+        {
+          "id": 239,
+          "name": "Reggae / Dancehall",
+          "slug": "reggae-dancehall",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/239/",
+          "enabled": true
+        },
+        {
+          "id": 242,
+          "name": "UK Funky",
+          "slug": "uk-funky",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/242/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/85/",
+      "launch_date": null
+    },
+    {
+      "id": 91,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Bass House",
+      "enabled": true,
+      "slug": "bass-house",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/91/",
+      "launch_date": null
+    },
+    {
+      "id": 101,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Brazilian Funk",
+      "enabled": true,
+      "slug": "brazilian-funk",
+      "sub_genres": [
+        {
+          "id": 277,
+          "name": "BH Funk",
+          "slug": "bh-funk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/277/",
+          "enabled": true
+        },
+        {
+          "id": 275,
+          "name": "Carioca Funk",
+          "slug": "carioca-funk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/275/",
+          "enabled": true
+        },
+        {
+          "id": 314,
+          "name": "Eletrofunk",
+          "slug": "eletrofunk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/314/",
+          "enabled": true
+        },
+        {
+          "id": 276,
+          "name": "Mandelao Funk",
+          "slug": "mandelao-funk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/276/",
+          "enabled": true
+        },
+        {
+          "id": 278,
+          "name": "Melodic Funk",
+          "slug": "melodic-funk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/278/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/101/",
+      "launch_date": null
+    },
+    {
+      "id": 9,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Breaks / Breakbeat / UK Bass",
+      "enabled": true,
+      "slug": "breaks-breakbeat-uk-bass",
+      "sub_genres": [
+        {
+          "id": 209,
+          "name": "Glitch Hop",
+          "slug": "glitch-hop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/209/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/9/",
+      "launch_date": null
+    },
+    {
+      "id": 103,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "Caribbean",
+      "enabled": true,
+      "slug": "caribbean",
+      "sub_genres": [
+        {
+          "id": 287,
+          "name": "Calypso",
+          "slug": "calypso",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/287/",
+          "enabled": true
+        },
+        {
+          "id": 284,
+          "name": "Dancehall",
+          "slug": "dancehall",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/284/",
+          "enabled": true
+        },
+        {
+          "id": 286,
+          "name": "Dub",
+          "slug": "dub",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/286/",
+          "enabled": true
+        },
+        {
+          "id": 283,
+          "name": "Reggae",
+          "slug": "reggae",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/283/",
+          "enabled": true
+        },
+        {
+          "id": 288,
+          "name": "Ska & Rocksteady",
+          "slug": "ska-rocksteady",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/288/",
+          "enabled": true
+        },
+        {
+          "id": 285,
+          "name": "Soca",
+          "slug": "soca",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/285/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/103/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 104,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "Country",
+      "enabled": true,
+      "slug": "country",
+      "sub_genres": [
+        {
+          "id": 290,
+          "name": "Country Dance",
+          "slug": "country-dance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/290/",
+          "enabled": true
+        },
+        {
+          "id": 289,
+          "name": "Country Pop",
+          "slug": "country-pop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/289/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/104/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 39,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Dance / Pop",
+      "enabled": true,
+      "slug": "dance-pop",
+      "sub_genres": [
+        {
+          "id": 254,
+          "name": "Afro Pop",
+          "slug": "afro-pop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/254/",
+          "enabled": true
+        },
+        {
+          "id": 148,
+          "name": "Pop",
+          "slug": "pop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/148/",
+          "enabled": true
+        },
+        {
+          "id": 150,
+          "name": "Tropical House",
+          "slug": "tropical-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/150/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/39/",
+      "launch_date": null
+    },
+    {
+      "id": 12,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Deep House",
+      "enabled": true,
+      "slug": "deep-house",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/12/",
+      "launch_date": null
+    },
+    {
+      "id": 110,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "DJ Edits",
+      "enabled": true,
+      "slug": "dj-edits",
+      "sub_genres": [
+        {
+          "id": 319,
+          "name": "African",
+          "slug": "african",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/319/",
+          "enabled": true
+        },
+        {
+          "id": 320,
+          "name": "Caribbean",
+          "slug": "caribbean",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/320/",
+          "enabled": true
+        },
+        {
+          "id": 321,
+          "name": "Country",
+          "slug": "country",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/321/",
+          "enabled": true
+        },
+        {
+          "id": 322,
+          "name": "Dance",
+          "slug": "dance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/322/",
+          "enabled": true
+        },
+        {
+          "id": 323,
+          "name": "Hip-Hop",
+          "slug": "hip-hop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/323/",
+          "enabled": true
+        },
+        {
+          "id": 324,
+          "name": "Latin",
+          "slug": "latin",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/324/",
+          "enabled": true
+        },
+        {
+          "id": 326,
+          "name": "R&B",
+          "slug": "rb",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/326/",
+          "enabled": true
+        },
+        {
+          "id": 327,
+          "name": "Rock",
+          "slug": "rock",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/327/",
+          "enabled": true
+        },
+        {
+          "id": 325,
+          "name": "\u0420\u043e\u0440",
+          "slug": "---",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/325/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/110/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 16,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "DJ Tools / Acapellas",
+      "enabled": true,
+      "slug": "dj-tools-acapellas",
+      "sub_genres": [
+        {
+          "id": 46,
+          "name": "Acapellas",
+          "slug": "acapellas",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/46/",
+          "enabled": true
+        },
+        {
+          "id": 108,
+          "name": "Battle Tools",
+          "slug": "battle-tools",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/108/",
+          "enabled": true
+        },
+        {
+          "id": 45,
+          "name": "Loops",
+          "slug": "loops",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/45/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/16/",
+      "launch_date": null
+    },
+    {
+      "id": 63,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Downtempo",
+      "enabled": true,
+      "slug": "downtempo",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/63/",
+      "launch_date": null
+    },
+    {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Drum & Bass",
+      "enabled": true,
+      "slug": "drum-bass",
+      "sub_genres": [
+        {
+          "id": 174,
+          "name": "Deep",
+          "slug": "deep",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/174/",
+          "enabled": true
+        },
+        {
+          "id": 191,
+          "name": "Halftime",
+          "slug": "halftime",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/191/",
+          "enabled": true
+        },
+        {
+          "id": 6,
+          "name": "Jump Up",
+          "slug": "jump-up",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/6/",
+          "enabled": true
+        },
+        {
+          "id": 66,
+          "name": "Jungle",
+          "slug": "jungle",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/66/",
+          "enabled": true
+        },
+        {
+          "id": 5,
+          "name": "Liquid",
+          "slug": "liquid",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/5/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/1/",
+      "launch_date": null
+    },
+    {
+      "id": 18,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Dubstep",
+      "enabled": true,
+      "slug": "dubstep",
+      "sub_genres": [
+        {
+          "id": 234,
+          "name": "Melodic Dubstep",
+          "slug": "melodic-dubstep",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/234/",
+          "enabled": true
+        },
+        {
+          "id": 262,
+          "name": "Midtempo",
+          "slug": "midtempo",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/262/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/18/",
+      "launch_date": null
+    },
+    {
+      "id": 94,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Electro (Classic / Detroit / Modern)",
+      "enabled": true,
+      "slug": "electro-classic-detroit-modern",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/94/",
+      "launch_date": null
+    },
+    {
+      "id": 3,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Electronica",
+      "enabled": true,
+      "slug": "electronica",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/3/",
+      "launch_date": null
+    },
+    {
+      "id": 81,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Funky House",
+      "enabled": true,
+      "slug": "funky-house",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/81/",
+      "launch_date": null
+    },
+    {
+      "id": 8,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Hard Dance / Hardcore / Neo Rave",
+      "enabled": true,
+      "slug": "hard-dance-hardcore-neo-rave",
+      "sub_genres": [
+        {
+          "id": 215,
+          "name": "Frenchcore",
+          "slug": "frenchcore",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/215/",
+          "enabled": true
+        },
+        {
+          "id": 120,
+          "name": "Hard House",
+          "slug": "hard-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/120/",
+          "enabled": true
+        },
+        {
+          "id": 100,
+          "name": "Hardstyle",
+          "slug": "hardstyle",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/100/",
+          "enabled": true
+        },
+        {
+          "id": 272,
+          "name": "Neo Rave",
+          "slug": "neo-rave",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/272/",
+          "enabled": true
+        },
+        {
+          "id": 213,
+          "name": "Terror",
+          "slug": "terror",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/213/",
+          "enabled": true
+        },
+        {
+          "id": 214,
+          "name": "UK / Happy Hardcore",
+          "slug": "uk-happy-hardcore",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/214/",
+          "enabled": true
+        },
+        {
+          "id": 212,
+          "name": "Uptempo",
+          "slug": "uptempo",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/212/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/8/",
+      "launch_date": null
+    },
+    {
+      "id": 2,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Hard Techno",
+      "enabled": true,
+      "slug": "hard-techno",
+      "sub_genres": [
+        {
+          "id": 270,
+          "name": "Hard Techno",
+          "slug": "hard-techno",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/270/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/2/",
+      "launch_date": null
+    },
+    {
+      "id": 105,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "Hip-Hop",
+      "enabled": true,
+      "slug": "hip-hop",
+      "sub_genres": [
+        {
+          "id": 291,
+          "name": "East Coast",
+          "slug": "east-coast",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/291/",
+          "enabled": true
+        },
+        {
+          "id": 293,
+          "name": "Global",
+          "slug": "global",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/293/",
+          "enabled": true
+        },
+        {
+          "id": 294,
+          "name": "Southern",
+          "slug": "southern",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/294/",
+          "enabled": true
+        },
+        {
+          "id": 292,
+          "name": "West Coast",
+          "slug": "west-coast",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/292/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/105/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 5,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "House",
+      "enabled": true,
+      "slug": "house",
+      "sub_genres": [
+        {
+          "id": 143,
+          "name": "Acid",
+          "slug": "acid",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/143/",
+          "enabled": true
+        },
+        {
+          "id": 315,
+          "name": "Latin House",
+          "slug": "latin-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/315/",
+          "enabled": true
+        },
+        {
+          "id": 177,
+          "name": "Soulful",
+          "slug": "soulful",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/177/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/5/",
+      "launch_date": null
+    },
+    {
+      "id": 37,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Indie Dance",
+      "enabled": true,
+      "slug": "indie-dance",
+      "sub_genres": [
+        {
+          "id": 223,
+          "name": "Dark Disco",
+          "slug": "dark-disco",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/223/",
+          "enabled": true
+        },
+        {
+          "id": 334,
+          "name": "Italo",
+          "slug": "italo",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/334/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/37/",
+      "launch_date": null
+    },
+    {
+      "id": 97,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Jackin House",
+      "enabled": true,
+      "slug": "jackin-house",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/97/",
+      "launch_date": null
+    },
+    {
+      "id": 106,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "Latin",
+      "enabled": true,
+      "slug": "latin",
+      "sub_genres": [
+        {
+          "id": 301,
+          "name": "Bachata",
+          "slug": "bachata",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/301/",
+          "enabled": true
+        },
+        {
+          "id": 295,
+          "name": "Cumbia",
+          "slug": "cumbia",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/295/",
+          "enabled": true
+        },
+        {
+          "id": 299,
+          "name": "Dembow",
+          "slug": "dembow",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/299/",
+          "enabled": true
+        },
+        {
+          "id": 302,
+          "name": "Latin Dance",
+          "slug": "latin-dance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/302/",
+          "enabled": true
+        },
+        {
+          "id": 304,
+          "name": "Latin Hip-Hop",
+          "slug": "latin-hip-hop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/304/",
+          "enabled": true
+        },
+        {
+          "id": 303,
+          "name": "Latin Pop",
+          "slug": "latin-pop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/303/",
+          "enabled": true
+        },
+        {
+          "id": 297,
+          "name": "Merengue",
+          "slug": "merengue",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/297/",
+          "enabled": true
+        },
+        {
+          "id": 298,
+          "name": "Reggaeton",
+          "slug": "reggaeton",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/298/",
+          "enabled": true
+        },
+        {
+          "id": 300,
+          "name": "Regional Mexican",
+          "slug": "regional-mexican",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/300/",
+          "enabled": true
+        },
+        {
+          "id": 296,
+          "name": "Salsa",
+          "slug": "salsa",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/296/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/106/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 111,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Latin Electronic",
+      "enabled": true,
+      "slug": "latin-electronic",
+      "sub_genres": [
+        {
+          "id": 331,
+          "name": "Electronic Cumbia",
+          "slug": "electronic-cumbia",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/331/",
+          "enabled": true
+        },
+        {
+          "id": 332,
+          "name": "Moombahton",
+          "slug": "moombahton",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/332/",
+          "enabled": true
+        },
+        {
+          "id": 329,
+          "name": "Raptor House",
+          "slug": "raptor-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/329/",
+          "enabled": true
+        },
+        {
+          "id": 330,
+          "name": "Tribal / Guaracha",
+          "slug": "tribal-guaracha",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/330/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/111/",
+      "launch_date": null
+    },
+    {
+      "id": 96,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Mainstage",
+      "enabled": true,
+      "slug": "mainstage",
+      "sub_genres": [
+        {
+          "id": 245,
+          "name": "Big Room",
+          "slug": "big-room",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/245/",
+          "enabled": true
+        },
+        {
+          "id": 246,
+          "name": "Electro House",
+          "slug": "electro-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/246/",
+          "enabled": true
+        },
+        {
+          "id": 247,
+          "name": "Future House",
+          "slug": "future-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/247/",
+          "enabled": true
+        },
+        {
+          "id": 252,
+          "name": "Future Rave",
+          "slug": "future-rave",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/252/",
+          "enabled": true
+        },
+        {
+          "id": 249,
+          "name": "Speed House",
+          "slug": "speed-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/249/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/96/",
+      "launch_date": null
+    },
+    {
+      "id": 90,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Melodic House & Techno",
+      "enabled": true,
+      "slug": "melodic-house-techno",
+      "sub_genres": [
+        {
+          "id": 267,
+          "name": "Melodic House",
+          "slug": "melodic-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/267/",
+          "enabled": true
+        },
+        {
+          "id": 268,
+          "name": "Melodic Techno",
+          "slug": "melodic-techno",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/268/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/90/",
+      "launch_date": null
+    },
+    {
+      "id": 14,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Minimal / Deep Tech",
+      "enabled": true,
+      "slug": "minimal-deep-tech",
+      "sub_genres": [
+        {
+          "id": 167,
+          "name": "Bounce",
+          "slug": "bounce",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/167/",
+          "enabled": true
+        },
+        {
+          "id": 188,
+          "name": "Deep Tech",
+          "slug": "deep-tech",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/188/",
+          "enabled": true
+        },
+        {
+          "id": 316,
+          "name": "Minimal House",
+          "slug": "minimal-house",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/316/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/14/",
+      "launch_date": null
+    },
+    {
+      "id": 50,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Nu Disco / Disco",
+      "enabled": true,
+      "slug": "nu-disco-disco",
+      "sub_genres": [
+        {
+          "id": 210,
+          "name": "Funk / Soul",
+          "slug": "funk-soul",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/210/",
+          "enabled": true
+        },
+        {
+          "id": 243,
+          "name": "Italo",
+          "slug": "italo",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/243/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/50/",
+      "launch_date": null
+    },
+    {
+      "id": 93,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Organic House",
+      "enabled": true,
+      "slug": "organic-house",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/93/",
+      "launch_date": null
+    },
+    {
+      "id": 107,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "Pop",
+      "enabled": true,
+      "slug": "pop",
+      "sub_genres": [
+        {
+          "id": 307,
+          "name": "Holiday",
+          "slug": "holiday",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/307/",
+          "enabled": true
+        },
+        {
+          "id": 306,
+          "name": "J-Pop",
+          "slug": "j-pop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/306/",
+          "enabled": true
+        },
+        {
+          "id": 305,
+          "name": "K-Pop",
+          "slug": "k-pop",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/305/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/107/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 15,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Progressive House",
+      "enabled": true,
+      "slug": "progressive-house",
+      "sub_genres": [],
+      "url": "https://api.beatport.com/v4/catalog/genres/15/",
+      "launch_date": null
+    },
+    {
+      "id": 13,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Psy-Trance",
+      "enabled": true,
+      "slug": "psy-trance",
+      "sub_genres": [
+        {
+          "id": 261,
+          "name": "Dark & Forest",
+          "slug": "dark-forest",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/261/",
+          "enabled": true
+        },
+        {
+          "id": 168,
+          "name": "Full-On",
+          "slug": "full-on",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/168/",
+          "enabled": true
+        },
+        {
+          "id": 260,
+          "name": "Goa Trance",
+          "slug": "goa-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/260/",
+          "enabled": true
+        },
+        {
+          "id": 169,
+          "name": "Progressive Psy",
+          "slug": "progressive-psy",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/169/",
+          "enabled": true
+        },
+        {
+          "id": 259,
+          "name": "Psychedelic",
+          "slug": "psychedelic",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/259/",
+          "enabled": true
+        },
+        {
+          "id": 263,
+          "name": "Psycore & Hi-Tech",
+          "slug": "psycore-hi-tech",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/263/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/13/",
+      "launch_date": null
+    },
+    {
+      "id": 108,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "R&B",
+      "enabled": true,
+      "slug": "rb",
+      "sub_genres": [
+        {
+          "id": 308,
+          "name": "Funk",
+          "slug": "funk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/308/",
+          "enabled": true
+        },
+        {
+          "id": 309,
+          "name": "Soul",
+          "slug": "soul",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/309/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/108/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 109,
+      "category": {
+        "id": 2,
+        "name": "Open Format"
+      },
+      "name": "Rock",
+      "enabled": true,
+      "slug": "rock",
+      "sub_genres": [
+        {
+          "id": 310,
+          "name": "Indie Rock",
+          "slug": "indie-rock",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/310/",
+          "enabled": true
+        },
+        {
+          "id": 311,
+          "name": "Metal",
+          "slug": "metal",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/311/",
+          "enabled": true
+        },
+        {
+          "id": 312,
+          "name": "Punk & Pop Punk",
+          "slug": "punk-pop-punk",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/312/",
+          "enabled": true
+        },
+        {
+          "id": 313,
+          "name": "Ska",
+          "slug": "ska",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/313/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/109/",
+      "launch_date": "2025-09-09"
+    },
+    {
+      "id": 11,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Tech House",
+      "enabled": true,
+      "slug": "tech-house",
+      "sub_genres": [
+        {
+          "id": 257,
+          "name": "Latin Tech",
+          "slug": "latin-tech",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/257/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/11/",
+      "launch_date": null
+    },
+    {
+      "id": 6,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Techno (Peak Time / Driving)",
+      "enabled": true,
+      "slug": "techno-peak-time-driving",
+      "sub_genres": [
+        {
+          "id": 219,
+          "name": "Driving",
+          "slug": "driving",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/219/",
+          "enabled": true
+        },
+        {
+          "id": 218,
+          "name": "Peak Time",
+          "slug": "peak-time",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/218/",
+          "enabled": true
+        },
+        {
+          "id": 328,
+          "name": "Psy-Techno",
+          "slug": "psy-techno",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/328/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/6/",
+      "launch_date": null
+    },
+    {
+      "id": 92,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Techno (Raw / Deep / Hypnotic)",
+      "enabled": true,
+      "slug": "techno-raw-deep-hypnotic",
+      "sub_genres": [
+        {
+          "id": 229,
+          "name": "Broken",
+          "slug": "broken",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/229/",
+          "enabled": true
+        },
+        {
+          "id": 224,
+          "name": "Deep / Hypnotic",
+          "slug": "deep-hypnotic",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/224/",
+          "enabled": true
+        },
+        {
+          "id": 228,
+          "name": "Dub",
+          "slug": "dub",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/228/",
+          "enabled": true
+        },
+        {
+          "id": 227,
+          "name": "EBM",
+          "slug": "ebm",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/227/",
+          "enabled": true
+        },
+        {
+          "id": 225,
+          "name": "Raw",
+          "slug": "raw",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/225/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/92/",
+      "launch_date": null
+    },
+    {
+      "id": 7,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Trance (Main Floor)",
+      "enabled": true,
+      "slug": "trance-main-floor",
+      "sub_genres": [
+        {
+          "id": 31,
+          "name": "Hard Trance",
+          "slug": "hard-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/31/",
+          "enabled": true
+        },
+        {
+          "id": 27,
+          "name": "Progressive Trance",
+          "slug": "progressive-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/27/",
+          "enabled": true
+        },
+        {
+          "id": 29,
+          "name": "Tech Trance",
+          "slug": "tech-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/29/",
+          "enabled": true
+        },
+        {
+          "id": 128,
+          "name": "Uplifting Trance",
+          "slug": "uplifting-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/128/",
+          "enabled": true
+        },
+        {
+          "id": 129,
+          "name": "Vocal Trance",
+          "slug": "vocal-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/129/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/7/",
+      "launch_date": null
+    },
+    {
+      "id": 99,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Trance (Raw / Deep / Hypnotic)",
+      "enabled": true,
+      "slug": "trance-raw-deep-hypnotic",
+      "sub_genres": [
+        {
+          "id": 265,
+          "name": "Deep Trance",
+          "slug": "deep-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/265/",
+          "enabled": true
+        },
+        {
+          "id": 266,
+          "name": "Hypnotic Trance",
+          "slug": "hypnotic-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/266/",
+          "enabled": true
+        },
+        {
+          "id": 264,
+          "name": "Raw Trance",
+          "slug": "raw-trance",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/264/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/99/",
+      "launch_date": null
+    },
+    {
+      "id": 38,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "Trap / Future Bass",
+      "enabled": true,
+      "slug": "trap-future-bass",
+      "sub_genres": [
+        {
+          "id": 102,
+          "name": "Trap",
+          "slug": "trap",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/102/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/38/",
+      "launch_date": null
+    },
+    {
+      "id": 86,
+      "category": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "name": "UK Garage / Bassline",
+      "enabled": true,
+      "slug": "uk-garage-bassline",
+      "sub_genres": [
+        {
+          "id": 317,
+          "name": "2-Step",
+          "slug": "2-step",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/317/",
+          "enabled": true
+        },
+        {
+          "id": 199,
+          "name": "Bassline",
+          "slug": "bassline",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/199/",
+          "enabled": true
+        },
+        {
+          "id": 318,
+          "name": "Speed Garage",
+          "slug": "speed-garage",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/318/",
+          "enabled": true
+        },
+        {
+          "id": 198,
+          "name": "UK Garage",
+          "slug": "uk-garage",
+          "url": "https://api.beatport.com/v4/catalog/sub-genres/198/",
+          "enabled": true
+        }
+      ],
+      "url": "https://api.beatport.com/v4/catalog/genres/86/",
+      "launch_date": null
+    }
+  ]
+}

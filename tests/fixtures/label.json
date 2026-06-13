@@ -1,0 +1,26 @@
+{
+  "bio": null,
+  "created": "2007-07-12T09:50:07-06:00",
+  "default_pre_order_weeks": 0,
+  "enabled": true,
+  "has_exclusive_contract": false,
+  "id": 6446,
+  "image": {
+    "id": 34992622,
+    "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+    "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+  },
+  "is_available_for_hype": true,
+  "is_available_for_bundle_subscription": false,
+  "is_available_for_pre_order": false,
+  "is_available_for_streaming": true,
+  "is_included_in_rightsflow": true,
+  "latest_active_publish_date": "2026-06-12",
+  "name": "mau5trap",
+  "slug": "mau5trap",
+  "updated": "2026-06-12T00:16:27-06:00",
+  "hype_eligible": false,
+  "hype_active": false,
+  "hype_trial_start_date": null,
+  "hype_trial_end_date": null
+}

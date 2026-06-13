@@ -1,0 +1,220 @@
+{
+  "results": [
+    {
+      "artists": [
+        {
+          "id": 1193781,
+          "image": {
+            "id": 5539565,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg"
+          },
+          "name": "Kbob",
+          "slug": "kbob",
+          "url": "https://api.beatport.com/v4/catalog/artists/1193781/"
+        }
+      ],
+      "bpm_range": {
+        "min": 130,
+        "max": 130
+      },
+      "catalog_number": "MAU50669",
+      "desc": "Distributed by Label Engine - www.label-engine.com",
+      "enabled": true,
+      "encoded_date": "2026-06-11T05:44:28-06:00",
+      "exclusive": false,
+      "id": 7051824,
+      "image": {
+        "id": 55949066,
+        "uri": "https://geo-media.beatport.com/image_size/1400x1400/33ec5a52-f60f-4a31-9e68-fac478e90d0a.jpg",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/33ec5a52-f60f-4a31-9e68-fac478e90d0a.jpg"
+      },
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "label": {
+        "id": 6446,
+        "name": "mau5trap",
+        "image": {
+          "id": 34992622,
+          "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+        },
+        "slug": "mau5trap"
+      },
+      "name": "Let's Go",
+      "new_release_date": "2026-06-26",
+      "override_price": null,
+      "pre_order": true,
+      "pre_order_date": "2026-06-12",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "price_override_firm": false,
+      "publish_date": "2026-06-26",
+      "remixers": [],
+      "slug": "lets-go",
+      "track_count": 1,
+      "upc": "612891077797",
+      "updated": "2026-06-12T00:33:15-06:00",
+      "url": "https://api.beatport.com/v4/catalog/releases/7051824/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        },
+        {
+          "id": 597319,
+          "image": {
+            "id": 36193910,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/217d5925-f769-4dc3-be09-cf3de52132f8.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/217d5925-f769-4dc3-be09-cf3de52132f8.jpg"
+          },
+          "name": "Rinzen",
+          "slug": "rinzen",
+          "url": "https://api.beatport.com/v4/catalog/artists/597319/"
+        }
+      ],
+      "bpm_range": {
+        "min": 128,
+        "max": 128
+      },
+      "catalog_number": "MAU50668EXT",
+      "desc": "Distributed by Label Engine - www.label-engine.com",
+      "enabled": true,
+      "encoded_date": "2026-06-05T05:41:57-06:00",
+      "exclusive": false,
+      "id": 7027170,
+      "image": {
+        "id": 55799808,
+        "uri": "https://geo-media.beatport.com/image_size/1400x1400/11b24bbd-d190-4849-bbd8-8fdc54769b3b.jpg",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/11b24bbd-d190-4849-bbd8-8fdc54769b3b.jpg"
+      },
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "label": {
+        "id": 6446,
+        "name": "mau5trap",
+        "image": {
+          "id": 34992622,
+          "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+        },
+        "slug": "mau5trap"
+      },
+      "name": "Not Exactly (Rinzen Remix Extended)",
+      "new_release_date": "2026-06-19",
+      "override_price": null,
+      "pre_order": true,
+      "pre_order_date": "2026-06-05",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "price_override_firm": false,
+      "publish_date": "2026-06-19",
+      "remixers": [],
+      "slug": "not-exactly-rinzen-remix-extended",
+      "track_count": 1,
+      "upc": "612891067637",
+      "updated": "2026-06-05T00:33:05-06:00",
+      "url": "https://api.beatport.com/v4/catalog/releases/7027170/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        },
+        {
+          "id": 597319,
+          "image": {
+            "id": 36193910,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/217d5925-f769-4dc3-be09-cf3de52132f8.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/217d5925-f769-4dc3-be09-cf3de52132f8.jpg"
+          },
+          "name": "Rinzen",
+          "slug": "rinzen",
+          "url": "https://api.beatport.com/v4/catalog/artists/597319/"
+        }
+      ],
+      "bpm_range": {
+        "min": 128,
+        "max": 128
+      },
+      "catalog_number": "MAU50668",
+      "desc": "Distributed by Label Engine - www.label-engine.com",
+      "enabled": true,
+      "encoded_date": "2026-06-05T05:25:31-06:00",
+      "exclusive": false,
+      "id": 7027065,
+      "image": {
+        "id": 55824972,
+        "uri": "https://geo-media.beatport.com/image_size/1400x1400/2924e718-a708-45ef-9baa-3f7124351626.jpg",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/2924e718-a708-45ef-9baa-3f7124351626.jpg"
+      },
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "label": {
+        "id": 6446,
+        "name": "mau5trap",
+        "image": {
+          "id": 34992622,
+          "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+        },
+        "slug": "mau5trap"
+      },
+      "name": "Not Exactly (Rinzen Remix)",
+      "new_release_date": "2026-06-19",
+      "override_price": null,
+      "pre_order": true,
+      "pre_order_date": "2026-06-05",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "price_override_firm": false,
+      "publish_date": "2026-06-19",
+      "remixers": [],
+      "slug": "not-exactly-rinzen-remix",
+      "track_count": 1,
+      "upc": "612891067033",
+      "updated": "2026-06-05T15:11:50-06:00",
+      "url": "https://api.beatport.com/v4/catalog/releases/7027065/",
+      "is_hype": false
+    }
+  ],
+  "next": "api.beatport.com/v4/catalog/labels/6446/releases/?per_page=3&page=2",
+  "previous": null,
+  "count": 826,
+  "page": "1/276",
+  "per_page": 3
+}

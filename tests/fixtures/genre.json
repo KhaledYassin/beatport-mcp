@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "id": 90,
+  "is_included_in_hype": true,
+  "name": "Melodic House & Techno",
+  "slug": "melodic-house-techno",
+  "sub_genres": [
+    {
+      "id": 267,
+      "name": "Melodic House",
+      "slug": "melodic-house",
+      "url": "https://api.beatport.com/v4/catalog/sub-genres/267/",
+      "enabled": true
+    },
+    {
+      "id": 268,
+      "name": "Melodic Techno",
+      "slug": "melodic-techno",
+      "url": "https://api.beatport.com/v4/catalog/sub-genres/268/",
+      "enabled": true
+    }
+  ]
+}

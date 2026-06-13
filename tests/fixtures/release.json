@@ -1,0 +1,83 @@
+{
+  "artists": [
+    {
+      "id": 26182,
+      "image": {
+        "id": 26070287,
+        "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+      },
+      "name": "deadmau5",
+      "slug": "deadmau5",
+      "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+    }
+  ],
+  "bpm_range": {
+    "min": 128,
+    "max": 128
+  },
+  "catalog_number": "MAU50610BP1",
+  "desc": null,
+  "enabled": true,
+  "encoded_date": "2024-08-25T14:35:53-06:00",
+  "exclusive": true,
+  "grid": null,
+  "id": 4706244,
+  "image": {
+    "id": 40519331,
+    "uri": "https://geo-media.beatport.com/image_size/1400x1400/73360ab7-f94b-484c-a693-6be7a1ccd652.jpg",
+    "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/73360ab7-f94b-484c-a693-6be7a1ccd652.jpg"
+  },
+  "is_available_for_streaming": true,
+  "is_explicit": false,
+  "is_ugc_remix": false,
+  "is_dj_edit": false,
+  "label": {
+    "id": 6446,
+    "name": "mau5trap",
+    "image": {
+      "id": 34992622,
+      "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+      "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+    },
+    "slug": "mau5trap"
+  },
+  "name": "Strobe (Layton Giordani Extended Remix)",
+  "new_release_date": "2024-09-13",
+  "override_price": null,
+  "pre_order": false,
+  "pre_order_date": "2024-09-05",
+  "price": {
+    "code": "GBP",
+    "symbol": "\u00a3",
+    "value": 1.86,
+    "display": "\u00a31.86"
+  },
+  "price_override_firm": false,
+  "publish_date": "2024-09-13",
+  "remixers": [
+    {
+      "id": 374036,
+      "image": {
+        "id": 44640509,
+        "uri": "https://geo-media.beatport.com/image_size/590x404/7192e7a2-3c50-4c76-bb8a-2985d89a3a14.jpg",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/7192e7a2-3c50-4c76-bb8a-2985d89a3a14.jpg"
+      },
+      "name": "Layton Giordani",
+      "slug": "layton-giordani",
+      "url": "https://api.beatport.com/v4/catalog/artists/374036/"
+    }
+  ],
+  "slug": "strobe-layton-giordani-extended-remix",
+  "tracks": [
+    "https://api.beatport.com/v4/catalog/tracks/19431036/"
+  ],
+  "track_count": 1,
+  "type": {
+    "id": 1,
+    "name": "Release"
+  },
+  "upc": "198846049618",
+  "updated": "2024-09-12T01:03:59-06:00",
+  "is_hype": false
+}

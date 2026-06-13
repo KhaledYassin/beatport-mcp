@@ -1,0 +1,71 @@
+{
+  "add_by": 2750629,
+  "add_date": "2026-06-13T08:04:53-06:00",
+  "change_date": "2026-06-13T08:08:28-06:00",
+  "description": null,
+  "enabled": true,
+  "id": 893576,
+  "image": {
+    "id": 56022555,
+    "uri": "https://geo-media.beatport.com/image_size/500x500/6e93b33f-c8d8-4b95-b37d-44022cde219e.jpg",
+    "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e93b33f-c8d8-4b95-b37d-44022cde219e.jpg"
+  },
+  "is_approved": true,
+  "is_indexed": false,
+  "is_published": true,
+  "name": "CRM038 PROMO",
+  "person": {
+    "id": 10689,
+    "owner_image": "https://geo-media.beatport.com/image_size/500x500/5575d998-9345-4452-949b-4a2f4f84f57a.jpg",
+    "owner_name": "Chillrecordsmusic",
+    "owner_slug": "chillrecordsmusic",
+    "owner_type": "djprofile",
+    "owner_person": 2750629
+  },
+  "price": {
+    "code": "GBP",
+    "symbol": "\u00a3",
+    "value": 50.7,
+    "display": "\u00a350.70"
+  },
+  "publish_date": "2026-06-13T08:08:28-06:00",
+  "slug": "crm038-promo",
+  "track_count": 39,
+  "artist": {
+    "id": 248106,
+    "name": "Igor Pumphonia",
+    "slug": "igor-pumphonia"
+  },
+  "genres": [
+    {
+      "id": 3,
+      "name": "Electronica",
+      "slug": "electronica",
+      "url": "https://api.beatport.com/v4/catalog/genres/3/"
+    },
+    {
+      "id": 5,
+      "name": "House",
+      "slug": "house",
+      "url": "https://api.beatport.com/v4/catalog/genres/5/"
+    },
+    {
+      "id": 39,
+      "name": "Dance / Pop",
+      "slug": "dance-pop",
+      "url": "https://api.beatport.com/v4/catalog/genres/39/"
+    },
+    {
+      "id": 12,
+      "name": "Deep House",
+      "slug": "deep-house",
+      "url": "https://api.beatport.com/v4/catalog/genres/12/"
+    },
+    {
+      "id": 50,
+      "name": "Nu Disco / Disco",
+      "slug": "nu-disco-disco",
+      "url": "https://api.beatport.com/v4/catalog/genres/50/"
+    }
+  ]
+}

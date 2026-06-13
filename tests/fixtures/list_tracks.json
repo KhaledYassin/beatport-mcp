@@ -1,0 +1,362 @@
+{
+  "results": [
+    {
+      "artists": [
+        {
+          "id": 663285,
+          "image": {
+            "id": 5539565,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg"
+          },
+          "name": "Rant Marson Zander",
+          "slug": "rant-marson-zander",
+          "url": "https://api.beatport.com/v4/catalog/artists/663285/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 100,
+      "bsrc_remixer": [],
+      "catalog_number": "P10004103582",
+      "current_status": {
+        "id": 8,
+        "name": "New Release",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/8/"
+      },
+      "encoded_date": "2026-06-13T15:07:02-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 3,
+        "name": "Electronica",
+        "slug": "electronica",
+        "url": "https://api.beatport.com/v4/catalog/genres/3/"
+      },
+      "id": 29324575,
+      "image": {
+        "id": 56022878,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/e93d4315-a8ce-4a16-921f-fa645c34ff0a.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/e93d4315-a8ce-4a16-921f-fa645c34ff0a.png"
+      },
+      "is_available_for_streaming": false,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "CNZ852302022",
+      "key": {
+        "camelot_number": 2,
+        "camelot_letter": "B",
+        "chord_type": {
+          "id": 2,
+          "name": "Major",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/2/"
+        },
+        "id": 33,
+        "is_sharp": false,
+        "is_flat": true,
+        "letter": "G",
+        "name": "Gb Major",
+        "url": "https://api.beatport.com/v4/catalog/keys/33/"
+      },
+      "label_track_identifier": null,
+      "length": "3:44",
+      "length_ms": 224866,
+      "mix_name": "Original Mix",
+      "name": "Stars",
+      "new_release_date": "2023-02-24",
+      "pre_order": false,
+      "pre_order_date": null,
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "publish_date": "2026-06-12",
+      "release": {
+        "id": 7063995,
+        "name": "Stars",
+        "image": {
+          "id": 56022871,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/cc37a688-d432-4e07-b7c5-599520478e25.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/cc37a688-d432-4e07-b7c5-599520478e25.jpg"
+        },
+        "label": {
+          "id": 170735,
+          "name": "\u79c0\u52a8\u53d1\u884c",
+          "image": {
+            "id": 5539566,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg"
+          },
+          "slug": "---"
+        },
+        "slug": "stars"
+      },
+      "remixers": [],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/e93d4315-a8ce-4a16-921f-fa645c34ff0a.LOFI.mp3",
+      "sample_start_ms": 89946,
+      "sample_end_ms": 209946,
+      "slug": "stars",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/29324575/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 2399455,
+          "image": {
+            "id": 5539565,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg"
+          },
+          "name": "\u6797\u5b50\u4e91Claude",
+          "slug": "claude",
+          "url": "https://api.beatport.com/v4/catalog/artists/2399455/"
+        },
+        {
+          "id": 2399576,
+          "image": {
+            "id": 5539565,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg"
+          },
+          "name": "\u545c\u551b\u551b",
+          "slug": "---",
+          "url": "https://api.beatport.com/v4/catalog/artists/2399576/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 133,
+      "bsrc_remixer": [],
+      "catalog_number": "P10004103575",
+      "current_status": {
+        "id": 8,
+        "name": "New Release",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/8/"
+      },
+      "encoded_date": "2026-06-13T15:06:59-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 5,
+        "name": "House",
+        "slug": "house",
+        "url": "https://api.beatport.com/v4/catalog/genres/5/"
+      },
+      "id": 29324574,
+      "image": {
+        "id": 56022867,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/507a61e4-9b55-4317-aedc-6e6b18651a42.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/507a61e4-9b55-4317-aedc-6e6b18651a42.png"
+      },
+      "is_available_for_streaming": false,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "CNZ852302143",
+      "key": {
+        "camelot_number": 10,
+        "camelot_letter": "B",
+        "chord_type": {
+          "id": 2,
+          "name": "Major",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/2/"
+        },
+        "id": 22,
+        "is_sharp": false,
+        "is_flat": false,
+        "letter": "D",
+        "name": "D Major",
+        "url": "https://api.beatport.com/v4/catalog/keys/22/"
+      },
+      "label_track_identifier": null,
+      "length": "2:57",
+      "length_ms": 177293,
+      "mix_name": "Original Mix",
+      "name": "\u8309\u8389Jasmine\uff08Feat.Wu Maimai)",
+      "new_release_date": "2023-02-23",
+      "pre_order": false,
+      "pre_order_date": null,
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "publish_date": "2026-06-12",
+      "release": {
+        "id": 7063994,
+        "name": "\u8309\u8389Jasmine\uff08Feat.Wu Maimai)",
+        "image": {
+          "id": 56022864,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/a9e157bc-582c-4184-9beb-58e403827c91.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/a9e157bc-582c-4184-9beb-58e403827c91.jpg"
+        },
+        "label": {
+          "id": 170735,
+          "name": "\u79c0\u52a8\u53d1\u884c",
+          "image": {
+            "id": 5539566,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg"
+          },
+          "slug": "---"
+        },
+        "slug": "jasminefeatwu-maimai"
+      },
+      "remixers": [
+        {
+          "id": 2399575,
+          "image": {
+            "id": 5539565,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg"
+          },
+          "name": "\u5e9f\u7269\u8d85\u5e02FWCS",
+          "slug": "fwcs",
+          "url": "https://api.beatport.com/v4/catalog/artists/2399575/"
+        }
+      ],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/507a61e4-9b55-4317-aedc-6e6b18651a42.LOFI.mp3",
+      "sample_start_ms": 70917,
+      "sample_end_ms": 160917,
+      "slug": "jasminefeatwu-maimai",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/29324574/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 2396337,
+          "image": {
+            "id": 5539565,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/0dc61986-bccf-49d4-8fad-6b147ea8f327.jpg"
+          },
+          "name": "\u66fe\u662d\u73ae",
+          "slug": "---",
+          "url": "https://api.beatport.com/v4/catalog/artists/2396337/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 118,
+      "bsrc_remixer": [],
+      "catalog_number": "00602475958635",
+      "current_status": {
+        "id": 10,
+        "name": "General Content",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/10/"
+      },
+      "encoded_date": "2026-06-13T15:06:00-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 107,
+        "name": "Pop",
+        "slug": "pop",
+        "url": "https://api.beatport.com/v4/catalog/genres/107/"
+      },
+      "id": 29324565,
+      "image": {
+        "id": 56022856,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/4683a283-d7f6-4baa-9c51-d63075403b61.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/4683a283-d7f6-4baa-9c51-d63075403b61.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "CNUM72500088",
+      "key": {
+        "camelot_number": 11,
+        "camelot_letter": "B",
+        "chord_type": {
+          "id": 2,
+          "name": "Major",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/2/"
+        },
+        "id": 23,
+        "is_sharp": false,
+        "is_flat": false,
+        "letter": "A",
+        "name": "A Major",
+        "url": "https://api.beatport.com/v4/catalog/keys/23/"
+      },
+      "label_track_identifier": null,
+      "length": "3:27",
+      "length_ms": 207711,
+      "mix_name": "Instrumental",
+      "name": "\u706b\u8f66\u5f80\u5357",
+      "new_release_date": "2022-06-10",
+      "pre_order": false,
+      "pre_order_date": null,
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.14,
+        "display": "\u00a31.14"
+      },
+      "publish_date": "2025-02-14",
+      "release": {
+        "id": 7063987,
+        "name": "\u706b\u8f66\u5f80\u5357",
+        "image": {
+          "id": 56022849,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/8ab84283-e6ce-4834-b3db-d390447bc140.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/8ab84283-e6ce-4834-b3db-d390447bc140.jpg"
+        },
+        "label": {
+          "id": 99417,
+          "name": "Universal Music China",
+          "image": {
+            "id": 5539566,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg"
+          },
+          "slug": "universal-music-china"
+        },
+        "slug": "---"
+      },
+      "remixers": [],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/4683a283-d7f6-4baa-9c51-d63075403b61.LOFI.mp3",
+      "sample_start_ms": 83084,
+      "sample_end_ms": 173084,
+      "slug": "instrumental",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/29324565/",
+      "is_hype": false
+    }
+  ],
+  "next": "api.beatport.com/v4/catalog/tracks/?per_page=3&page=2",
+  "previous": null,
+  "count": 10000,
+  "page": "1/3334",
+  "per_page": 3
+}

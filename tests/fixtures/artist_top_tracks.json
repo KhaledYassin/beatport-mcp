@@ -1,0 +1,372 @@
+{
+  "results": [
+    {
+      "artists": [
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        },
+        {
+          "id": 597319,
+          "image": {
+            "id": 36193910,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/217d5925-f769-4dc3-be09-cf3de52132f8.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/217d5925-f769-4dc3-be09-cf3de52132f8.jpg"
+          },
+          "name": "Rinzen",
+          "slug": "rinzen",
+          "url": "https://api.beatport.com/v4/catalog/artists/597319/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 128,
+      "bsrc_remixer": [],
+      "catalog_number": "MAU50668EXT",
+      "current_status": {
+        "id": 12,
+        "name": "Pre-order New Release",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/12/"
+      },
+      "encoded_date": "2026-06-05T05:41:57-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 90,
+        "name": "Melodic House & Techno",
+        "slug": "melodic-house-techno",
+        "url": "https://api.beatport.com/v4/catalog/genres/90/"
+      },
+      "id": 29211628,
+      "image": {
+        "id": 55799822,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/ef599f07-e564-4bd0-a62e-4db851469754.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/ef599f07-e564-4bd0-a62e-4db851469754.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "CA5KR2656726",
+      "key": {
+        "camelot_number": 7,
+        "camelot_letter": "B",
+        "chord_type": {
+          "id": 2,
+          "name": "Major",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/2/"
+        },
+        "id": 19,
+        "is_sharp": false,
+        "is_flat": false,
+        "letter": "F",
+        "name": "F Major",
+        "url": "https://api.beatport.com/v4/catalog/keys/19/"
+      },
+      "label_track_identifier": "73365768407363962797881",
+      "length": "5:02",
+      "length_ms": 302120,
+      "mix_name": "Rinzen Remix Extended",
+      "name": "Not Exactly",
+      "new_release_date": "2026-06-19",
+      "pre_order": true,
+      "pre_order_date": "2026-06-05",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "publish_date": "2026-06-19",
+      "release": {
+        "id": 7027170,
+        "name": "Not Exactly (Rinzen Remix Extended)",
+        "image": {
+          "id": 55799808,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/11b24bbd-d190-4849-bbd8-8fdc54769b3b.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/11b24bbd-d190-4849-bbd8-8fdc54769b3b.jpg"
+        },
+        "label": {
+          "id": 6446,
+          "name": "mau5trap",
+          "image": {
+            "id": 34992622,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+          },
+          "slug": "mau5trap"
+        },
+        "slug": "not-exactly-rinzen-remix-extended"
+      },
+      "remixers": [],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/ef599f07-e564-4bd0-a62e-4db851469754.LOFI.mp3",
+      "sample_start_ms": 120848,
+      "sample_end_ms": 240848,
+      "slug": "not-exactly",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/29211628/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        },
+        {
+          "id": 597319,
+          "image": {
+            "id": 36193910,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/217d5925-f769-4dc3-be09-cf3de52132f8.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/217d5925-f769-4dc3-be09-cf3de52132f8.jpg"
+          },
+          "name": "Rinzen",
+          "slug": "rinzen",
+          "url": "https://api.beatport.com/v4/catalog/artists/597319/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": true,
+      "bpm": 128,
+      "bsrc_remixer": [],
+      "catalog_number": "MAU50668",
+      "current_status": {
+        "id": 12,
+        "name": "Pre-order New Release",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/12/"
+      },
+      "encoded_date": "2026-06-05T05:25:31-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 90,
+        "name": "Melodic House & Techno",
+        "slug": "melodic-house-techno",
+        "url": "https://api.beatport.com/v4/catalog/genres/90/"
+      },
+      "id": 29211409,
+      "image": {
+        "id": 55799343,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/885c37b1-328b-4075-b379-583aee09c2d4.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/885c37b1-328b-4075-b379-583aee09c2d4.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "CA5KR2656692",
+      "key": {
+        "camelot_number": 7,
+        "camelot_letter": "B",
+        "chord_type": {
+          "id": 2,
+          "name": "Major",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/2/"
+        },
+        "id": 19,
+        "is_sharp": false,
+        "is_flat": false,
+        "letter": "F",
+        "name": "F Major",
+        "url": "https://api.beatport.com/v4/catalog/keys/19/"
+      },
+      "label_track_identifier": "73365768407363832797825",
+      "length": "4:33",
+      "length_ms": 273826,
+      "mix_name": "Rinzen Remix",
+      "name": "Not Exactly",
+      "new_release_date": "2026-06-19",
+      "pre_order": true,
+      "pre_order_date": "2026-06-05",
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.3,
+        "display": "\u00a31.30"
+      },
+      "publish_date": "2026-06-19",
+      "release": {
+        "id": 7027065,
+        "name": "Not Exactly (Rinzen Remix)",
+        "image": {
+          "id": 55824972,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/2924e718-a708-45ef-9baa-3f7124351626.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/2924e718-a708-45ef-9baa-3f7124351626.jpg"
+        },
+        "label": {
+          "id": 6446,
+          "name": "mau5trap",
+          "image": {
+            "id": 34992622,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6d5a9ea7-56df-4139-8bc0-2b3f8c598487.jpg"
+          },
+          "slug": "mau5trap"
+        },
+        "slug": "not-exactly-rinzen-remix"
+      },
+      "remixers": [],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/ea09ee97-e575-4ed6-931c-cedf4424f4d5.LOFI.mp3",
+      "sample_start_ms": 109530,
+      "sample_end_ms": 229530,
+      "slug": "not-exactly",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/29211409/",
+      "is_hype": false
+    },
+    {
+      "artists": [
+        {
+          "id": 370,
+          "image": {
+            "id": 37841,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/48553670-c445-4ad3-b83a-14d2681e305d.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/48553670-c445-4ad3-b83a-14d2681e305d.jpg"
+          },
+          "name": "Kaskade",
+          "slug": "kaskade",
+          "url": "https://api.beatport.com/v4/catalog/artists/370/"
+        },
+        {
+          "id": 26182,
+          "image": {
+            "id": 26070287,
+            "uri": "https://geo-media.beatport.com/image_size/590x404/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/6e98ef38-e4d2-42d2-8c0f-6fcaed5f2050.jpg"
+          },
+          "name": "deadmau5",
+          "slug": "deadmau5",
+          "url": "https://api.beatport.com/v4/catalog/artists/26182/"
+        }
+      ],
+      "publish_status": "published",
+      "available_worldwide": false,
+      "bpm": 128,
+      "bsrc_remixer": [],
+      "catalog_number": "5099962147453",
+      "current_status": {
+        "id": 10,
+        "name": "General Content",
+        "url": "https://api.beatport.com/v4/auxiliary/current-status/10/"
+      },
+      "encoded_date": "2026-03-21T18:18:23-06:00",
+      "exclusive": false,
+      "free_downloads": [],
+      "free_download_start_date": null,
+      "free_download_end_date": null,
+      "genre": {
+        "id": 107,
+        "name": "Pop",
+        "slug": "pop",
+        "url": "https://api.beatport.com/v4/catalog/genres/107/"
+      },
+      "id": 27557712,
+      "image": {
+        "id": 49915546,
+        "uri": "https://geo-media.beatport.com/image_size/1500x250/57b9f551-9a97-4650-879f-8309fe941a6d.png",
+        "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/57b9f551-9a97-4650-879f-8309fe941a6d.png"
+      },
+      "is_available_for_streaming": true,
+      "is_explicit": false,
+      "is_ugc_remix": false,
+      "is_dj_edit": false,
+      "isrc": "GBTDG0900063",
+      "key": {
+        "camelot_number": 10,
+        "camelot_letter": "A",
+        "chord_type": {
+          "id": 1,
+          "name": "Minor",
+          "url": "https://api.beatport.com/v4/catalog/chord-types/1/"
+        },
+        "id": 10,
+        "is_sharp": false,
+        "is_flat": false,
+        "letter": "B",
+        "name": "B Minor",
+        "url": "https://api.beatport.com/v4/catalog/keys/10/"
+      },
+      "label_track_identifier": null,
+      "length": "3:21",
+      "length_ms": 201480,
+      "mix_name": "Radio Edit",
+      "name": "I Remember",
+      "new_release_date": "2010-02-28",
+      "pre_order": false,
+      "pre_order_date": null,
+      "price": {
+        "code": "GBP",
+        "symbol": "\u00a3",
+        "value": 1.14,
+        "display": "\u00a31.14"
+      },
+      "publish_date": "2012-04-16",
+      "release": {
+        "id": 6521610,
+        "name": "The Best Chart Album in the World... Ever!",
+        "image": {
+          "id": 49915196,
+          "uri": "https://geo-media.beatport.com/image_size/1400x1400/ea840b34-7a85-4cc9-8ada-aa54b665278a.jpg",
+          "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/ea840b34-7a85-4cc9-8ada-aa54b665278a.jpg"
+        },
+        "label": {
+          "id": 34746,
+          "name": "Parlophone UK",
+          "image": {
+            "id": 5539566,
+            "uri": "https://geo-media.beatport.com/image_size/500x500/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg",
+            "dynamic_uri": "https://geo-media.beatport.com/image_size/{w}x{h}/cda9862c-cf92-4d13-ac65-7e9277181f51.jpg"
+          },
+          "slug": "parlophone-uk"
+        },
+        "slug": "the-best-chart-album-in-the-world-ever"
+      },
+      "remixers": [],
+      "sale_type": {
+        "id": 1,
+        "name": "purchase",
+        "url": "https://api.beatport.com/v4/auxiliary/sale-types/1/"
+      },
+      "sample_url": "https://geo-samples.beatport.com/track/57b9f551-9a97-4650-879f-8309fe941a6d.LOFI.mp3",
+      "sample_start_ms": 43000,
+      "sample_end_ms": 133000,
+      "slug": "i-remember",
+      "sub_genre": null,
+      "url": "https://api.beatport.com/v4/catalog/tracks/27557712/",
+      "is_hype": false
+    }
+  ],
+  "next": "api.beatport.com/v4/catalog/artists/26182/tracks/?per_page=3&page=2",
+  "previous": null,
+  "count": 1656,
+  "page": "1/552",
+  "per_page": 3
+}
