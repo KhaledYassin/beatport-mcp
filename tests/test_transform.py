@@ -46,3 +46,36 @@ def test_format_track_real_fixture():
     assert "Camelot 1A" in out          # native camelot_number/letter passthrough
     assert "BPM:" in out
     assert "2024-09-13" in out          # top-level publish_date
+
+
+def test_format_track_summary_compact_line():
+    line = transform.format_track_summary(TRACK)
+    assert line == "#12345678 — Strobe · deadmau5 · 128 BPM · A Minor (Camelot 8A, Open Key 1m)"
+
+
+def test_format_search_results_tracks():
+    # Beatport keys the result list by the search `type` (verified Task 5), not "results".
+    data = {"tracks": [TRACK, {"id": 2, "name": "B", "artists": [{"name": "Y"}]}]}
+    out = transform.format_search_results(data, "tracks")
+    assert out.splitlines()[0].startswith("#12345678 — Strobe")
+    assert out.splitlines()[1].startswith("#2 — B · Y")
+
+
+def test_format_search_results_non_track_type():
+    data = {"artists": [{"id": 3, "name": "Adam Beyer"}]}
+    assert transform.format_search_results(data, "artists") == "#3 — Adam Beyer"
+
+
+def test_format_search_results_empty():
+    assert transform.format_search_results({"tracks": []}, "tracks") == "No results."
+
+
+def test_format_search_results_real_fixture():
+    # Grounds against the real captured search payload (Task 5).
+    import json
+    from pathlib import Path
+
+    data = json.loads(Path("tests/fixtures/search_tracks.json").read_text())
+    out = transform.format_search_results(data, "tracks")
+    assert out                                  # non-empty
+    assert all(line.startswith("#") for line in out.splitlines())

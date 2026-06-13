@@ -51,3 +51,24 @@ def format_track(track: dict) -> str:
     if track.get("sample_url"):
         lines.append(f"Preview: {track['sample_url']}")
     return "\n".join(lines)
+
+
+def format_track_summary(track: dict) -> str:
+    bits = [f"#{track.get('id')} — {_title(track)} · {_artist_names(track)}"]
+    if track.get("bpm"):
+        bits.append(f"{track['bpm']} BPM")
+    key = format_key(track.get("key"))
+    if key:
+        bits.append(key)
+    return " · ".join(bits)
+
+
+def format_search_results(data: dict, type: str) -> str:
+    # Beatport keys the result list by the search `type` (verified Task 5),
+    # e.g. {"tracks": [...], "count": N, "page": "1/1035", ...}.
+    items = data.get(type) or []
+    if not items:
+        return "No results."
+    if type == "tracks":
+        return "\n".join(format_track_summary(t) for t in items)
+    return "\n".join(f"#{item.get('id')} — {item.get('name', '?')}" for item in items)
