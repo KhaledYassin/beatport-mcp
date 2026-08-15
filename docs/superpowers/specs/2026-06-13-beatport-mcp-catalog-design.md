@@ -211,14 +211,50 @@ Tools **return** error strings; they never raise into the MCP. A single `_handle
 ## 11. Live-Verification Checklist (requires user's token in local `.env`)
 
 Confirm against the real API before merge; capture fixtures as we go:
-1. **`client_id`** — identify from devtools `POST /auth/o/token/` payload (required for refresh).
-2. **Refresh-token rotation** — does Beatport rotate on refresh? (Decides token-file necessity.)
+1. ~~**`client_id`** — identify from devtools `POST /auth/o/token/` payload (required for refresh).~~
+   **RESOLVED (2026-08-15):** no need to catch the token POST — `GET /api/auth/session` on
+   `www.beatport.com` returns the session's `access_token`/`refresh_token`, and the access token
+   is a JWT carrying a `client_id` claim (40 chars, matches the value used for refresh).
+   Also observed: `iss`/`aud` = `urn:bp:identity-service`; the JWT format is not guaranteed
+   (`POST /v4/auth/o/token/` may return an **opaque** access token), so never assume a decodable
+   token. Token lifetime depends on the app: store-frontend JWTs last **10 minutes**, whereas a
+   token refreshed against the docs client returns `expires_in: 36000` (**10 hours**).
+
+   **Use the docs app (`app:docs`), not the store frontend (`app:prostore`).** Verified
+   2026-08-15: `https://www.beatport.com/api/auth/session` yields an access token that works for
+   catalog reads, but its `refreshToken` cannot be redeemed at `POST /v4/auth/o/token/` — four
+   attempts, always `400 invalid_grant`, including with a token seconds old and with the client id
+   taken from that same token's `client_id` claim. It is bound to the client the store's
+   server-side NextAuth session authenticates as. Credentials from `api.beatport.com/v4/docs/`
+   refresh on the first try. Diagnostic: `400 invalid_grant` = refresh token stale/spent/foreign;
+   `401 invalid_client` = `client_id` missing or unknown (omitting it entirely produces this).
+2. ~~**Refresh-token rotation** — does Beatport rotate on refresh? (Decides token-file necessity.)~~
+   **RESOLVED (2026-08-15): YES — rotates, single-use, no grace period.** Evidence: one refresh
+   token exchanged successfully (`200`, new `refresh_token` returned), then the *same* token
+   replayed moments later returned `400 {"error": "invalid_grant"}`.
+   Consequences, all load-bearing:
+   - The token file is **mandatory**, not a nicety — env vars alone go stale after one refresh.
+   - A refreshed token must be persisted **before** anything that can raise. `client.py::_refresh`
+     already does this (`store.update()` immediately follows the exchange); keep it that way.
+   - **Never run two clients against one token file.** `_refresh_lock` serialises only within a
+     process, and a long-lived server re-reads the file only at `TokenStore` construction, so a
+     second process spending the token silently strands the first. Use `BEATPORT_TOKEN_PATH` to
+     give scripts their own file.
+   - The *browser* counts as one of those clients: a signed-in beatport.com tab refreshes its
+     own session in the background, so a token copied from `/api/auth/session` goes stale within
+     minutes unless the tab is closed. Grab credentials in a private window and close it.
+   - Error codes discriminate cleanly: `400 invalid_grant` = refresh token stale/spent;
+     `401 invalid_client` = `client_id` missing or wrong. Both public clients observed so far
+     (`app:docs`, `app:prostore`) refresh without a client secret.
 3. **`list_tracks` filter params** — exact names: `bpm` vs `bpm_gte/bpm_lte`, `key`/`key_id`,
    `genre_id`, valid `order_by` values.
 4. **Key object shape** — does the track `key` already include Camelot? (Pass-through vs lookup.)
 5. **Endpoint existence/paths** — confirm `top-10-tracks`, genre `top-10-releases`, chart, search
    `type` enum, and any list endpoints (`/catalog/releases/`, `/catalog/charts/`).
-6. **Pagination envelope** — response keys (`results`/`count`/`next`) for the pagination helper.
+6. ~~**Pagination envelope** — response keys (`results`/`count`/`next`) for the pagination helper.~~
+   **RESOLVED (2026-08-15):** `GET /v4/catalog/search/` returns
+   `['tracks', 'order', 'next', 'previous', 'count', 'page', 'per_page']` — note search nests
+   items under a **type-named key** (`tracks`), not a generic `results`.
 7. **PKCE `redirect_uri`** — whether a loopback redirect works with the available client_id.
 
 ## 12. Contribution Mechanics

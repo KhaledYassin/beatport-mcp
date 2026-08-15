@@ -41,14 +41,45 @@ uv run beatport-auth
 ```
 
 This opens your browser to sign in to Beatport, then persists and prints your `CLIENT_ID`,
-`ACCESS_TOKEN`, and `REFRESH_TOKEN`. The server auto-refreshes the access token when it
-expires.
+`ACCESS_TOKEN`, and `REFRESH_TOKEN`.
+
+Refreshed access tokens last 10 hours; `BeatportClient` refreshes on any `401` and persists the
+result, so the server keeps itself alive without further attention.
 
 > **Note:** Beatport does not currently offer self-serve API app registration, so the
 > `client_id` and redirect URI used by the browser flow may need adjusting for your account.
-> As an interim, you can copy `CLIENT_ID`, `ACCESS_TOKEN`, and `REFRESH_TOKEN` from your
-> browser devtools — the `POST /auth/o/token/` request while signed in to Beatport — into the
-> config below.
+> If the browser login fails, grab credentials by hand instead:
+>
+> 1. Sign in at **`https://api.beatport.com/v4/docs/`** and copy the JSON from the token
+>    response (devtools → Network). It contains `access_token` and `refresh_token`.
+> 2. You do **not** need to hunt for a separate `client_id`: the access token is a JWT whose
+>    payload contains a `client_id` claim. Decode its middle segment to read it, e.g.
+>    `python -c "import base64,json,sys; p=sys.argv[1].split('.')[1]; p+='='*(-len(p)%4); print(json.loads(base64.urlsafe_b64decode(p))['client_id'])" <access_token>`
+> 3. Put all three in `.env` (gitignored) or in the config below.
+>
+> **Use the docs app, not the store frontend.** `https://www.beatport.com/api/auth/session`
+> also returns an `accessToken`/`refreshToken` pair, and the access token works fine for
+> catalog reads — but its refresh token is bound to a client the store's server-side session
+> holds, so refreshing with it always fails `400 {"error": "invalid_grant"}` and you are left
+> with a credential that dies in 10 minutes and cannot renew. Tokens from the docs app carry
+> scope `app:docs` and refresh correctly; store tokens carry `app:prostore` and do not.
+>
+> Take the `client_id` from **the same token you are pasting** — a refresh sends `client_id`
+> and `refresh_token` together, so the two must come from one app. The error codes tell you
+> which half is wrong: `400 invalid_grant` = refresh token stale, spent, or from another
+> client; `401 invalid_client` = `client_id` missing or unknown.
+
+> **Gotcha:** the persisted token file (`~/.beatport-mcp/token.json`, override with
+> `BEATPORT_TOKEN_PATH`) takes precedence over the environment — env values only seed the
+> very first run. After pasting fresh credentials, delete that file, or the server will keep
+> using the old ones and fail with *"Authentication failed"*.
+
+> **Refresh tokens are single-use.** Beatport rotates the refresh token on every exchange and
+> revokes the old one immediately, which is why the token file exists: the credentials in your
+> environment are a one-shot seed and go stale after the first refresh. Two consequences —
+> don't expect the `.env` values to keep working, and don't point two clients at the same token
+> file (give scripts their own via `BEATPORT_TOKEN_PATH`), since whichever refreshes first
+> strands the other.
 
 ### 3. Register the server with Claude
 
